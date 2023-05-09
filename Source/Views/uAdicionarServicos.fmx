@@ -1,0 +1,19 @@
+object AdicionarServicos: TAdicionarServicos
+  Left = 0
+  Top = 0
+  BorderIcons = [biHelp]
+  BorderStyle = None
+  ClientHeight = 625
+  ClientWidth = 299
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pnContent: TRectangle
+    Align = Client
+    Size.Width = 299.000000000000000000
+    Size.Height = 625.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+end

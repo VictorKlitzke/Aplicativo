@@ -1,0 +1,110 @@
+object Sobre: TSobre
+  Left = 0
+  Top = 0
+  BorderStyle = None
+  ClientHeight = 625
+  ClientWidth = 299
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pnContent: TRectangle
+    Align = Client
+    Size.Width = 299.000000000000000000
+    Size.Height = 625.000000000000000000
+    Size.PlatformDefault = False
+    object LayoutSobre: TLayout
+      Align = Top
+      Size.Width = 299.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object pnDifLeft: TRectangle
+        Align = Left
+        Fill.Color = xFF003F63
+        Size.Width = 145.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object pnDifRight: TRectangle
+        Align = Client
+        Fill.Color = xFF1E1E1E
+        Size.Width = 154.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+    end
+    object Layout1: TLayout
+      Align = Left
+      Position.Y = 50.000000000000000000
+      Size.Width = 145.000000000000000000
+      Size.Height = 575.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object pnLeft: TRectangle
+        Align = Client
+        Fill.Color = xFF003F63
+        Size.Width = 145.000000000000000000
+        Size.Height = 575.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object LBSobreApp: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Size.Width = 145.000000000000000000
+          Size.Height = 575.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          TextSettings.VertAlign = Leading
+          TextSettings.Trimming = Word
+          Text = 'Sobre o Aplicativo'
+          TabOrder = 0
+        end
+      end
+    end
+    object Layout2: TLayout
+      Align = Client
+      Size.Width = 154.000000000000000000
+      Size.Height = 575.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object pnRight: TRectangle
+        Align = Client
+        Fill.Color = xFF1E1E1E
+        Size.Width = 154.000000000000000000
+        Size.Height = 575.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+    end
+  end
+  object LayoutCenter: TLayout
+    Align = Center
+    Size.Width = 242.000000000000000000
+    Size.Height = 280.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object pnSobreHifuzion: TRectangle
+      Align = Client
+      Fill.Color = xFFD9D9D9
+      Size.Width = 242.000000000000000000
+      Size.Height = 280.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object LBInfo: TLabel
+        Align = Center
+        Size.Width = 206.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.HorzAlign = Center
+        Text = 'Texto para teste aonde se enncontra em manutencao'
+        TabOrder = 0
+      end
+    end
+  end
+end

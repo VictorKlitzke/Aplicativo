@@ -1,0 +1,35 @@
+object BuscarServicos: TBuscarServicos
+  Left = 0
+  Top = 0
+  BorderStyle = None
+  ClientHeight = 625
+  ClientWidth = 299
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pnContent: TRectangle
+    Align = Client
+    Size.Width = 299.000000000000000000
+    Size.Height = 625.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object GridCenter: TGridLayout
+      Align = Center
+      ItemHeight = 64.000000000000000000
+      ItemWidth = 64.000000000000000000
+      Orientation = Horizontal
+      Size.Width = 285.000000000000000000
+      Size.Height = 613.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object LayoutinfoCat: TLayout
+        Align = FitLeft
+        Size.Width = 64.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+      end
+    end
+  end
+end
