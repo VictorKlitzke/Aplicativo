@@ -24,19 +24,25 @@ type
     qrUsuariosPSQSENHA: TStringField;
     qrUsuariosPSQPROFISSAO: TStringField;
     qrUsuariosPSQSTATUS: TIntegerField;
+    qrListar: TUniQuery;
     qrServicosPSQ: TUniQuery;
-    qrServicosPSQID: TIntegerField;
-    qrServicosPSQSERVICO: TStringField;
-    qrServicosPSQDESCRISCAO: TMemoField;
-    qrServicosPSQVALOR_SERVICO: TFloatField;
-    qrServicosPSQDESCONTO_SERVICO: TFloatField;
-    qrServicosPSQID_USUARIO: TIntegerField;
-    qrServicosPSQFORMA_PAGEMTO: TStringField;
-    qrServicosPSQESTADO: TStringField;
-    qrServicosPSQCIDADE: TStringField;
-    qrServicosPSQBAIRRO: TStringField;
-    qrServicosPSQENDERECO: TStringField;
-    qrServicosPSQNUMERO_CASA: TFloatField;
+    qrListarID_USERS: TIntegerField;
+    qrListarNOME: TStringField;
+    qrListarEMAIL: TStringField;
+    qrListarTELEFONE: TStringField;
+    qrListarSENHA: TStringField;
+    qrListarPROFISSAO: TStringField;
+    qrListarID_SERVICOS: TIntegerField;
+    qrListarSERVICO: TStringField;
+    qrListarDESCRISCAO: TMemoField;
+    qrListarVALOR: TFloatField;
+    qrListarDESCONTO: TFloatField;
+    qrListarFORMA_PAGAMENTO: TStringField;
+    qrListarESTADO: TStringField;
+    qrListarCIDADE: TStringField;
+    qrListarBAIRRO: TStringField;
+    qrListarENDERECO: TStringField;
+    qrListarID_USUARIO: TIntegerField;
   private
     { Private declarations }
   public
@@ -46,25 +52,11 @@ type
 var
   Banco: TBanco;
   Id,
-  Status,
-  id_Usuario,
-  Id_Servico: Integer;
-
+  Status: Integer;
   Nome,
   Profissao,
   Telefone,
-  Senha,
-  Servico,
-  Descriscao,
-  Forma_pagamento,
-  Estado,
-  Cidade,
-  Bairro: string;
-
-  Numero_casa: Float64;
-
-  Valor_Servico,
-  Desconto_servico: string;
+  Senha: string;
 
 implementation
 

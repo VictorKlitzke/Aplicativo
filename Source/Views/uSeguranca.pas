@@ -17,42 +17,47 @@ uses
   FMX.Controls.Presentation,
   FMX.StdCtrls,
   FMX.Layouts,
-  FMX.Edit, Data.DB, MemDS, DBAccess, Uni, FMX.Ani;
+  FMX.Edit, Data.DB, MemDS, DBAccess, Uni;
 
 type
   TSeguranca = class(TForm)
     pnContent: TRectangle;
     RoundRectanimation: TRoundRect;
+    qrUsuariosDeletar: TUniQuery;
+    dsUsuariosdeletar: TDataSource;
+    qrUsuariosDeletarSTATUS: TIntegerField;
+    Layout1: TLayout;
     LayoutAlterar: TLayout;
     pnMudarSenha: TRectangle;
-    pnDeletarConta: TRectangle;
     LayoutMudarSenha: TLayout;
     LayoutMudar: TLayout;
     RoundRectSenha: TRoundRect;
     LBAlterar: TLabel;
     LayoutLinha: TLayout;
-    LayoutLabelPergunta: TLayout;
-    LayoutDeletar: TLayout;
-    LayoutDel: TLayout;
-    LayoutAlinharDelete: TLayout;
-    LayoutBotaoDel: TLayout;
-    pnDigitar: TRectangle;
-    LBApagarConta: TLabel;
-    LBDeletarConta: TLabel;
-    RoundRectDeletar: TRoundRect;
-    LayoutBtaoDel: TLayout;
-    LayoutEspacamentoBotaoDel: TLayout;
-    LayoutEspacamento: TLayout;
     LayoutLabelAlterar: TLayout;
     LayoutAlterarCenter: TLayout;
     LBAlterarSenha: TLabel;
+    Layout2: TLayout;
+    LayoutDeletar: TLayout;
+    pnDeletarConta: TRectangle;
+    LayoutLabelPergunta: TLayout;
     LayoutApagarConta: TLayout;
+    LBApagarConta: TLabel;
+    LayoutDel: TLayout;
+    LayoutAlinharDelete: TLayout;
+    LBDeletarConta: TLabel;
+    LayoutBotaoDel: TLayout;
+    LayoutEspacamentoBotaoDel: TLayout;
+    LayoutBtaoDel: TLayout;
+    RoundRectDeletar: TRoundRect;
+    pnDigitar: TRectangle;
     edtDeletar: TEdit;
-    qrUsuariosDeletar: TUniQuery;
-    dsUsuariosdeletar: TDataSource;
-    qrUsuariosDeletarSTATUS: TIntegerField;
-    LayoutCenter: TLayout;
-    FloatKeyAnimation: TFloatKeyAnimation;
+    LayoutEspacamento: TLayout;
+    LayoutTop: TLayout;
+    LayoutNomeCenter: TLayout;
+    LBNome: TLabel;
+    LayoutNomeSeg: TLayout;
+    LBDados: TLabel;
     procedure FormShow(Sender: TObject);
     procedure RoundRectDeletarClick(Sender: TObject);
   private
@@ -75,9 +80,11 @@ procedure TSeguranca.DeletarUsuarioPorSenha;
 begin
   try
     qrUsuariosDeletar.Close;
-    qrUsuariosDeletar.ParamByName('ID').AsInteger := 46;
+    qrUsuariosDeletar.ParamByName('ID').AsInteger := DM.Id;
     qrUsuariosDeletar.Open;
     qrUsuariosDeletar.Edit;
+    if edtDeletar.Text = '' then
+      ShowMessage('Erro ao desativar usuario!');
       if (qrUsuariosDeletar.State in [dsEdit,dsInsert]) then
       begin
         qrUsuariosDeletarSTATUS.Value := 1;
@@ -95,13 +102,15 @@ end;
 procedure TSeguranca.FormShow(Sender: TObject);
 begin
   DM.Banco.Connection.Connected := True;
+
+  RoundRectanimation.Position.Y := -100;
+  RoundRectanimation.Position.X := 0;
 end;
 
 procedure TSeguranca.RoundRectDeletarClick(Sender: TObject);
 begin
   DeletarUsuarioPorSenha;
 end;
-
 end.
 
 

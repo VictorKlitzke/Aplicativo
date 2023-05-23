@@ -1,7 +1,6 @@
 object AdicionarServicos: TAdicionarServicos
   Left = 0
   Top = 0
-  BorderIcons = [biHelp]
   BorderStyle = None
   ClientHeight = 625
   ClientWidth = 299

@@ -66,7 +66,6 @@ type
     RoundRectServ: TRoundRect;
     pnContent: TRectangle;
     dsUsuariosInformacoes: TDataSource;
-    pnInfo: TRectangle;
     procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
@@ -87,16 +86,13 @@ uses
 procedure TPerfil.FormActivate(Sender: TObject);
 begin
   DM.Banco.qrUsuariosPSQ.Close;
-  DM.Banco.qrServicosPSQ.Close;
-  DM.Banco.qrUsuariosPSQ.ParamByName('ID').AsInteger := 6;
+  DM.Banco.qrUsuariosPSQ.ParamByName('ID').AsInteger := 46;
   DM.Banco.qrUsuariosPSQ.Open;
-  DM.Banco.qrServicosPSQ.Open;
   LBProfissao.Text := DM.Banco.qrUsuariosPSQPROFISSAO.AsString;
   LBNome.Text := DM.Banco.qrUsuariosPSQNOME.AsString;
 
   LBTelefone.Text := DM.Banco.qrUsuariosPSQTELEFONE.AsString;
   LBEmail.Text := DM.Banco.qrUsuariosPSQEMAIL.AsString;
-  LBValor.Text := DM.Banco.qrServicosPSQVALOR_SERVICO.AsString;
 end;
 
 end.

@@ -19,7 +19,7 @@ uses
   FMX.Controls.Presentation,
   FMX.Edit,
   FMX.Layouts,
-  uSobre;
+  uSobre, Data.DB, MemDS, DBAccess, Uni, FMX.Effects;
 
 type
   TPrincipal = class(TForm)
@@ -71,6 +71,39 @@ type
     pnLinhaLocalizacao: TRectangle;
     pnLinhaSobre: TRectangle;
     Timer: TTimer;
+    ScrollImage: THorzScrollBox;
+    ShadowEffect1: TShadowEffect;
+    LayoutContentCenter: TLayout;
+    LayoutImg: TLayout;
+    pnProf: TRectangle;
+    ImageProfile: TImage;
+    pnProfissao: TRectangle;
+    LayoutNomeProf: TLayout;
+    LBProfissaoCarousel: TLabel;
+    LayoutPopulares: TLayout;
+    LayoutNomePopulares: TLayout;
+    Label1: TLabel;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    HorzScrollBox1: THorzScrollBox;
+    qrListar: TUniQuery;
+    qrListarID_USERS: TIntegerField;
+    qrListarNOME: TStringField;
+    qrListarEMAIL: TStringField;
+    qrListarTELEFONE: TStringField;
+    qrListarSENHA: TStringField;
+    qrListarPROFISSAO: TStringField;
+    qrListarID_SERVICOS: TIntegerField;
+    qrListarSERVICO: TStringField;
+    qrListarDESCRISCAO: TMemoField;
+    qrListarVALOR: TFloatField;
+    qrListarDESCONTO: TFloatField;
+    qrListarFORMA_PAGAMENTO: TStringField;
+    qrListarESTADO: TStringField;
+    qrListarCIDADE: TStringField;
+    qrListarBAIRRO: TStringField;
+    qrListarENDERECO: TStringField;
+    qrListarID_USUARIO: TIntegerField;
     procedure FloatAnimationFinish(Sender: TObject);
     procedure ImageMenuClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -99,7 +132,7 @@ var
 implementation
 
 uses
-  DM, uCadastroUsuario, uPerfil, uAdicionarServicos, uSeguranca, uBuscaServicos;
+  DM, uCadastroUsuario, uPerfil, uAdicionarServicos, uSeguranca, uBuscarServicos, uHelpers;
 
 {$R *.fmx}
 
@@ -114,10 +147,9 @@ begin
   {$IFDEF MSWINDOWS}
   larg_tela := Principal.Width;
   {$ENDIF}
-
   with Principal do
   begin
-    if NOT FloatAnimation.Running then
+    if not FloatAnimation.Running then
     begin
       if (larg_tela < 600) and (pnSubMenu.Width > 0) then
       begin
@@ -169,7 +201,8 @@ begin
   if Principal.Width < 600 then
   begin
     ImageMenu.AnimateFloat('Opacity', 1, 0.2);
-  end else
+  end
+  else
   begin
     ImageMenu.AnimateFloat('Opacity', 1, 0.2);
   end;
@@ -178,7 +211,7 @@ end;
 procedure TPrincipal.FormActivate(Sender: TObject);
 begin
   DM.Banco.qrUsuariosPSQ.Close;
-  DM.Banco.qrUsuariosPSQ.ParamByName('ID').AsInteger := 6;//DM.Id;
+  DM.Banco.qrUsuariosPSQ.ParamByName('ID').AsInteger := DM.Id;
   DM.Banco.qrUsuariosPSQ.Open;
   LBNome.Text := DM.Banco.qrUsuariosPSQNOME.AsString;
   LBProfissao.Text := DM.Banco.qrUsuariosPSQPROFISSAO.AsString;
@@ -193,6 +226,10 @@ begin
     FloatAnimation.StopValue := 200; 
     FloatAnimation.Inverse := false;
   end;
+  LayoutImg := TLayout.Create(Self);
+  LayoutImg.Parent := Self;
+  LayoutImg.Align := TAlignLayout.Client;
+  LBProfissaoCarousel.Text := DM.Banco.qrUsuariosPSQNOME.AsString;
 end;
 
 procedure TPrincipal.FormResize(Sender: TObject);
@@ -203,6 +240,7 @@ end;
 procedure TPrincipal.FormShow(Sender: TObject);
 begin
   DM.Banco.Connection.Connected := True;
+  DM.Banco.qrListar.Open;
 end;
 
 procedure TPrincipal.ImageAddServicosClick(Sender: TObject);
@@ -223,11 +261,6 @@ end;
 
 procedure TPrincipal.ImagePerfilClick(Sender: TObject);
 begin
-//  if Assigned(Perfil) then
-//  if not Assigned(Perfil) then
-//    Application.CreateForm(TPerfil, Perfil);
-//
-//  Principal.Parent := pnContent;
   Perfil.Show;
 end;
 
@@ -254,7 +287,7 @@ end;
 
 procedure TPrincipal.LBVERClick(Sender: TObject);
 begin
-  Perfil.ShowModal;
+  Perfil.Show;
 end;
 
 end.

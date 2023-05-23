@@ -7,7 +7,7 @@ object Banco: TBanco
     Port = 3306
     Database = 'hifuzion'
     Username = 'HFZ'
-    Server = '192.168.0.103'
+    Server = '192.168.0.102'
     Connected = True
     LoginPrompt = False
     Left = 24
@@ -21,10 +21,9 @@ object Banco: TBanco
   object qrUsuariosPSQ: TUniQuery
     Connection = Connection
     SQL.Strings = (
-      'SELECT * FROM USUARIOS WHERE ID = :ID')
-    Active = True
-    Left = 80
-    Top = 80
+      'select * from usuarios where id = :id')
+    Left = 320
+    Top = 104
     ParamData = <
       item
         DataType = ftInteger
@@ -43,17 +42,17 @@ object Banco: TBanco
     object qrUsuariosPSQEMAIL: TStringField
       FieldName = 'EMAIL'
       Required = True
-      Size = 50
+      Size = 40
     end
     object qrUsuariosPSQTELEFONE: TStringField
       FieldName = 'TELEFONE'
       Required = True
-      Size = 25
+      Size = 12
     end
     object qrUsuariosPSQSENHA: TStringField
       FieldName = 'SENHA'
       Required = True
-      Size = 12
+      Size = 7
     end
     object qrUsuariosPSQPROFISSAO: TStringField
       FieldName = 'PROFISSAO'
@@ -65,71 +64,129 @@ object Banco: TBanco
       Required = True
     end
   end
-  object qrServicosPSQ: TUniQuery
+  object qrListar: TUniQuery
     Connection = Connection
     SQL.Strings = (
-      'SELECT * FROM SERVICOS WHERE ID = :ID')
-    Left = 168
-    Top = 88
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'ID'
-        Value = nil
-      end>
-    object qrServicosPSQID: TIntegerField
+      'SELECT '
+      '  '
+      ' USUARIOS.ID AS ID_USERS, '
+      ' USUARIOS.NOME, '
+      ' USUARIOS.EMAIL, '
+      ' USUARIOS.TELEFONE, '
+      ' USUARIOS.SENHA,  '
+      ' USUARIOS.PROFISSAO,     '
+      ' SERVICOS.ID AS ID_SERVICOS,  '
+      ' SERVICOS.SERVICO, '
+      ' SERVICOS.DESCRISCAO,  '
+      ' SERVICOS.VALOR,  '
+      ' SERVICOS.DESCONTO, '
+      ' SERVICOS.DESCONTO, '
+      ' SERVICOS.FORMA_PAGAMENTO, '
+      ' SERVICOS.ESTADO,  '
+      ' SERVICOS.CIDADE, '
+      ' SERVICOS.BAIRRO,  '
+      ' SERVICOS.ENDERECO,  '
+      ' SERVICOS.ID_USUARIO'
+      'FROM   '
+      ' USUARIOS USUARIOS '
+      ' JOIN SERVICOS ON SERVICOS.ID_USUARIO = USUARIOS.ID')
+    Left = 320
+    Top = 5
+    object qrListarID_USERS: TIntegerField
       AutoGenerateValue = arAutoInc
-      FieldName = 'ID'
+      FieldName = 'ID_USERS'
     end
-    object qrServicosPSQSERVICO: TStringField
-      FieldName = 'SERVICO'
+    object qrListarNOME: TStringField
+      FieldName = 'NOME'
+      Required = True
+      Size = 50
+    end
+    object qrListarEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Required = True
+      Size = 40
+    end
+    object qrListarTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Required = True
+      Size = 12
+    end
+    object qrListarSENHA: TStringField
+      FieldName = 'SENHA'
+      Required = True
+      Size = 7
+    end
+    object qrListarPROFISSAO: TStringField
+      FieldName = 'PROFISSAO'
       Required = True
       Size = 100
     end
-    object qrServicosPSQDESCRISCAO: TMemoField
+    object qrListarID_SERVICOS: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'ID_SERVICOS'
+      ReadOnly = True
+    end
+    object qrListarSERVICO: TStringField
+      FieldName = 'SERVICO'
+      ReadOnly = True
+      Required = True
+      Size = 100
+    end
+    object qrListarDESCRISCAO: TMemoField
       FieldName = 'DESCRISCAO'
+      ReadOnly = True
       Required = True
       BlobType = ftMemo
     end
-    object qrServicosPSQVALOR_SERVICO: TFloatField
-      FieldName = 'VALOR_SERVICO'
+    object qrListarVALOR: TFloatField
+      FieldName = 'VALOR'
+      ReadOnly = True
       Required = True
     end
-    object qrServicosPSQDESCONTO_SERVICO: TFloatField
-      FieldName = 'DESCONTO_SERVICO'
+    object qrListarDESCONTO: TFloatField
+      FieldName = 'DESCONTO'
+      ReadOnly = True
       Required = True
     end
-    object qrServicosPSQID_USUARIO: TIntegerField
-      FieldName = 'ID_USUARIO'
-    end
-    object qrServicosPSQFORMA_PAGEMTO: TStringField
-      FieldName = 'FORMA_PAGEMTO'
+    object qrListarFORMA_PAGAMENTO: TStringField
+      FieldName = 'FORMA_PAGAMENTO'
+      ReadOnly = True
       Required = True
-      Size = 50
+      Size = 100
     end
-    object qrServicosPSQESTADO: TStringField
+    object qrListarESTADO: TStringField
       FieldName = 'ESTADO'
+      ReadOnly = True
       Required = True
-      Size = 50
+      Size = 100
     end
-    object qrServicosPSQCIDADE: TStringField
+    object qrListarCIDADE: TStringField
       FieldName = 'CIDADE'
+      ReadOnly = True
       Required = True
-      Size = 50
+      Size = 100
     end
-    object qrServicosPSQBAIRRO: TStringField
+    object qrListarBAIRRO: TStringField
       FieldName = 'BAIRRO'
+      ReadOnly = True
       Required = True
-      Size = 50
+      Size = 100
     end
-    object qrServicosPSQENDERECO: TStringField
+    object qrListarENDERECO: TStringField
       FieldName = 'ENDERECO'
+      ReadOnly = True
       Required = True
-      Size = 50
+      Size = 100
     end
-    object qrServicosPSQNUMERO_CASA: TFloatField
-      FieldName = 'NUMERO_CASA'
+    object qrListarID_USUARIO: TIntegerField
+      FieldName = 'ID_USUARIO'
+      ReadOnly = True
       Required = True
     end
+  end
+  object qrServicosPSQ: TUniQuery
+    Connection = Connection
+    Left = 320
+    Top = 56
   end
 end

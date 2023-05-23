@@ -63,6 +63,7 @@ type
     procedure CamposObrigadorios;
     procedure CadastrarUsuarios;
     function ValidarEmail(const Email: string): Boolean;
+    function ValidarTelefone(Telefone: string): Boolean;
   public
     { Public declarations }
   end;
@@ -99,9 +100,15 @@ begin
 
     if not ValidarEmail(edtEmail.Text) then
     begin
-      ShowMessage('Endereço de e-mail inválido.');
+      ShowMessage('Endereço de e-mail inválido!');
       Exit;
     end;
+
+//    if not ValidarTelefone(edtTelefone.Text) then
+//    begin
+//      ShowMessage('Telefone inválido!');
+//      Exit;
+//    end;
 
     DM.Banco.Connection.Commit;
 
@@ -149,18 +156,40 @@ begin
   end;
 end;
 function TCadastroUsuarios.ValidarEmail(const Email: string): Boolean;
+const
+  AtSymbol = '@';
 var
-  I, AtPos: Integer;
+  I, LEmail: Integer;
 begin
   Result := False;
-  AtPos := Pos('@', Email);
 
-  if (AtPos < 2) or (AtPos = Length(Email)) then
+  LEmail := Pos(AtSymbol, Email);
+  if LEmail = 0 then
     Exit;
-  for I := AtPos to Length(Email) do
+
+  if (LEmail < 2) or (LEmail >= Length(Email)) then
+    Exit;
+
+  for I := LEmail + 1 to Length(Email) do
+  begin
     if not (Email[I] in ['A'..'Z', 'a'..'z', '0'..'9', '-', '_', '.']) then
       Exit;
+  end;
 
   Result := True;
+end;
+function TCadastroUsuarios.ValidarTelefone(Telefone: string): Boolean;
+var
+  I, LTelefone: Integer;
+begin
+
+  if LTelefone = Null then
+    Exit;
+
+  for I := LTelefone + 1 to Length(Telefone) do
+  begin
+    if not (Telefone[I] in ['0'..'9']) then
+      Exit;
+  end;
 end;
 end.

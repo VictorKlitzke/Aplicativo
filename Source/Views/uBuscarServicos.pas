@@ -1,19 +1,10 @@
-unit uBuscaServicos;
+unit uBuscarServicos;
 
 interface
 
 uses
-  System.SysUtils,
-  System.Types,
-  System.UITypes,
-  System.Classes,
-  System.Variants,
-  FMX.Types,
-  FMX.Controls,
-  FMX.Forms,
-  FMX.Graphics,
-  FMX.Dialogs,
-  FMX.Objects,
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.Layouts;
 
 type
@@ -24,14 +15,12 @@ type
     Layout3: TLayout;
     Layout4: TLayout;
     Rectangle1: TRectangle;
-    Rectangle2: TRectangle;
+    pnInfoProfissao: TRectangle;
     Rectangle3: TRectangle;
-    Rectangle4: TRectangle;
-    Image1: TImage;
-    Layout5: TLayout;
-    Layout6: TLayout;
-    Layout7: TLayout;
-    Layout8: TLayout;
+    ImgProf: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
   private
     { Private declarations }
   public

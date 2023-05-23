@@ -4,31 +4,100 @@ object BuscarServicos: TBuscarServicos
   BorderStyle = None
   ClientHeight = 625
   ClientWidth = 299
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
+  object Rectangle2: TRectangle
+    Position.X = 80.000000000000000000
+    Position.Y = 376.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Rectangle3: TRectangle
+    Position.X = 216.000000000000000000
+    Position.Y = 440.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Rectangle4: TRectangle
+    Position.X = 216.000000000000000000
+    Position.Y = 320.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+  end
   object pnContent: TRectangle
     Align = Client
     Size.Width = 299.000000000000000000
     Size.Height = 625.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
-    object GridCenter: TGridLayout
+    object Layout1: TLayout
       Align = Center
-      ItemHeight = 64.000000000000000000
-      ItemWidth = 64.000000000000000000
-      Orientation = Horizontal
-      Size.Width = 285.000000000000000000
-      Size.Height = 613.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 599.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      object LayoutinfoCat: TLayout
-        Align = FitLeft
-        Size.Width = 64.000000000000000000
-        Size.Height = 64.000000000000000000
+      object Layout2: TLayout
+        Align = Top
+        Size.Width = 281.000000000000000000
+        Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
+        object Layout3: TLayout
+          Align = Left
+          Size.Width = 57.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Image1: TImage
+            MultiResBitmap = <
+              item
+              end>
+            Align = Client
+            Size.Width = 57.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object Layout4: TLayout
+          Align = Client
+          Size.Width = 224.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Rectangle1: TRectangle
+            Align = Client
+            Size.Width = 224.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Kind = None
+          end
+        end
+      end
+      object Layout5: TLayout
+        Position.X = 24.000000000000000000
+        Position.Y = 136.000000000000000000
+        TabOrder = 1
+      end
+      object Layout6: TLayout
+        Position.X = 48.000000000000000000
+        Position.Y = 240.000000000000000000
+        TabOrder = 2
+      end
+      object Layout7: TLayout
+        Position.X = 168.000000000000000000
+        Position.Y = 176.000000000000000000
+        TabOrder = 3
+      end
+      object Layout8: TLayout
+        Position.X = 136.000000000000000000
+        Position.Y = 128.000000000000000000
+        TabOrder = 4
       end
     end
   end

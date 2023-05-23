@@ -1,14 +1,16 @@
-unit uAdicionarServicos;
+unit uBotaoLogar;
 
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects;
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Controls.Presentation, FMX.StdCtrls;
 
 type
-  TAdicionarServicos = class(TForm)
+  TBotaoLogar = class(TForm)
     pnContent: TRectangle;
+    LBLogar: TLabel;
   private
     { Private declarations }
   public
@@ -16,7 +18,7 @@ type
   end;
 
 var
-  AdicionarServicos: TAdicionarServicos;
+  BotaoLogar: TBotaoLogar;
 
 implementation
 

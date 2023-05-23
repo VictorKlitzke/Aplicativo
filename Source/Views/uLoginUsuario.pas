@@ -102,7 +102,7 @@ begin
   except
     on e: Exception do
     begin
-      ShowMessage('Erro ao fazer login!' + e.Message);
+      ShowMessage('Erro ao fazer o login' + e.Message);
     end;
   end;
 end;

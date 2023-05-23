@@ -12,7 +12,9 @@ uses
   uPerfil in 'Source\Views\uPerfil.pas' {Perfil},
   uAdicionarServicos in 'Source\Views\uAdicionarServicos.pas' {AdicionarServicos},
   uSeguranca in 'Source\Views\uSeguranca.pas' {Seguranca},
-  uBuscaServicos in 'Source\Views\uBuscaServicos.pas' {BuscarServicos};
+  uBuscarServicos in 'Source\Views\uBuscarServicos.pas' {BuscarServicos},
+  uHelpers in 'Source\Helpers\uHelpers.pas',
+  uBotaoLogar in 'Source\Views\uBotaoLogar.pas' {BotaoLogar};
 
 {$R *.res}
 
@@ -27,5 +29,6 @@ begin
   Application.CreateForm(TAdicionarServicos, AdicionarServicos);
   Application.CreateForm(TSeguranca, Seguranca);
   Application.CreateForm(TBuscarServicos, BuscarServicos);
+  Application.CreateForm(TBotaoLogar, BotaoLogar);
   Application.Run;
 end.
