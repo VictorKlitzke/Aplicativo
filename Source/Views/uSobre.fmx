@@ -4,6 +4,7 @@ object Sobre: TSobre
   BorderStyle = None
   ClientHeight = 625
   ClientWidth = 299
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -21,7 +22,7 @@ object Sobre: TSobre
       TabOrder = 2
       object pnDifLeft: TRectangle
         Align = Left
-        Fill.Color = xFF003F63
+        Fill.Color = xFFC8A323
         Size.Width = 145.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
@@ -45,7 +46,7 @@ object Sobre: TSobre
       TabOrder = 3
       object pnLeft: TRectangle
         Align = Client
-        Fill.Color = xFF003F63
+        Fill.Color = xFFC8A323
         Size.Width = 145.000000000000000000
         Size.Height = 575.000000000000000000
         Size.PlatformDefault = False

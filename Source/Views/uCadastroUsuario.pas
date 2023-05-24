@@ -104,11 +104,11 @@ begin
       Exit;
     end;
 
-//    if not ValidarTelefone(edtTelefone.Text) then
-//    begin
-//      ShowMessage('Telefone inválido!');
-//      Exit;
-//    end;
+    if not ValidarTelefone(edtTelefone.Text) then
+    begin
+      ShowMessage('Telefone inválido!');
+      Exit;
+    end;
 
     DM.Banco.Connection.Commit;
 
@@ -132,7 +132,12 @@ end;
 
 procedure TCadastroUsuarios.CamposObrigadorios;
 begin
-  if (Trim(edtNome.Text) = '') or (Trim(edtEmail.Text) = '') or (Trim(edtTelefone.Text) = '') or (Trim(edtProfissao.Text) = '') or (Trim(edtSenha.Text) = '') then
+  if (Trim(edtNome.Text) = '')
+    or (Trim(edtEmail.Text) = '')
+    or (Trim(edtTelefone.Text) = '')
+    or (Trim(edtProfissao.Text) = '')
+    or (Trim(edtSenha.Text) = '')
+  then
   begin
     ShowMessage('Todos os campos são obrigatórios.');
     Exit;

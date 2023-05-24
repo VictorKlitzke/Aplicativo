@@ -3,7 +3,7 @@
         <ProjectGuid>{286C0F25-D45E-4F97-95C0-65484F196822}</ProjectGuid>
         <ProjectVersion>18.6</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
-        <MainSource>Hifuzion.dpr</MainSource>
+        <MainSource>VG.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -107,7 +107,7 @@
         <AUP_READ_PHONE_STATE>true</AUP_READ_PHONE_STATE>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <SanitizedProjectName>Hifuzion</SanitizedProjectName>
+        <SanitizedProjectName>VG</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;aseprovider260;liteprovider260;tethering;ibprovider260;FireDACDBXDriver;unidac260;RESTBackendComponents;bindengine;CloudService;DataSnapClient;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;DataSnapNativeClient;rtl;DbxClientDriver;IndyIPClient;tdsprovider260;DataSnapProviderClient;RESTComponents;DBXInterBaseDriver;emsclientfiredac;dacfmx260;DataSnapFireDAC;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;soapserver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;ibmonitor;myprovider260;ibxpress;ibxbindings;dac260;FireDACDSDriver;CustomIPTransport;bindcomp;RtmRxCtl260;dbxcds;pgprovider260;unidacfmx260;dsnapxml;oraprovider260;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
@@ -435,7 +435,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">Hifuzion.dpr</Source>
+                    <Source Name="MainSource">VG.dpr</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
@@ -443,15 +443,14 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Assents\Logo\android-icon-144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="Bin\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Assents\Logo\Hifuzion960.png" Configuration="Debug" Class="Android_SplashImage960">
+                <DeployFile LocalName="Assents\Logo\android-icon-96x96.png" Configuration="Debug" Class="Android_LauncherIcon96">
                     <Platform Name="Android">
-                        <RemoteName>splash_image.png</RemoteName>
+                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -461,9 +460,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Bin\libHifuzion.so" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Bin\libVG.so" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Android">
-                        <RemoteName>libHifuzion.so</RemoteName>
+                        <RemoteName>libVG.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -550,15 +549,21 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Assents\Logo\android-icon-144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile">
                     <Platform Name="Android">
                         <RemoteName>libHFZ.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\Hifuzion.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\VG.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>Hifuzion.exe</RemoteName>
+                        <RemoteName>VG.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -567,14 +572,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Bin\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
+                <DeployFile LocalName="Assents\Logo\Hifuzion960.png" Configuration="Debug" Class="Android_SplashImage960">
                     <Platform Name="Android">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Assents\Logo\android-icon-96x96.png" Configuration="Debug" Class="Android_LauncherIcon96">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
+                        <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

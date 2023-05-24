@@ -1,4 +1,4 @@
-program Hifuzion;
+program VG;
 
 uses
   System.StartUpCopy,

@@ -4,6 +4,7 @@ object BuscarServicos: TBuscarServicos
   BorderStyle = None
   ClientHeight = 625
   ClientWidth = 299
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
