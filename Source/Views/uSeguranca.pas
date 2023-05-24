@@ -72,7 +72,7 @@ var
 implementation
 
 uses
-  DM, uPrincipal, uLibMobile;
+  DM, uPrincipal, uLibMobile, uPerfil, uAdicionarServicos, uSobre;
 
 {$R *.fmx}
 

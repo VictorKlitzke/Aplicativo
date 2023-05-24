@@ -104,11 +104,11 @@ begin
       Exit;
     end;
 
-    if not ValidarTelefone(edtTelefone.Text) then
-    begin
-      ShowMessage('Telefone inválido!');
-      Exit;
-    end;
+//    if not ValidarTelefone(edtTelefone.Text) then
+//    begin
+//      ShowMessage('Telefone inválido!');
+//      Exit;
+//    end;
 
     DM.Banco.Connection.Commit;
 

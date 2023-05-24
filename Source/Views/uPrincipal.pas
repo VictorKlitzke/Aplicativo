@@ -19,7 +19,13 @@ uses
   FMX.Controls.Presentation,
   FMX.Edit,
   FMX.Layouts,
-  uSobre, Data.DB, MemDS, DBAccess, Uni, FMX.Effects;
+  uSobre,
+  Data.DB,
+  MemDS,
+  DBAccess,
+  Uni,
+  FMX.Effects,
+  uSeguranca;
 
 type
   TPrincipal = class(TForm)
@@ -132,7 +138,7 @@ var
 implementation
 
 uses
-  DM, uCadastroUsuario, uPerfil, uAdicionarServicos, uSeguranca, uBuscarServicos, uHelpers;
+  DM, uCadastroUsuario, uPerfil, uAdicionarServicos, uBuscarServicos, uHelpers;
 
 {$R *.fmx}
 
@@ -240,7 +246,10 @@ end;
 procedure TPrincipal.FormShow(Sender: TObject);
 begin
   DM.Banco.Connection.Connected := True;
-  DM.Banco.qrListar.Open;
+  if DM.Banco.qrUsuariosPSQSTATUS.AsInteger = 1 then
+  begin
+    LBSobre.Enabled := False;
+  end;
 end;
 
 procedure TPrincipal.ImageAddServicosClick(Sender: TObject);

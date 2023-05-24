@@ -11,10 +11,10 @@ uses
   uSobre in 'Source\Views\uSobre.pas' {Sobre},
   uPerfil in 'Source\Views\uPerfil.pas' {Perfil},
   uAdicionarServicos in 'Source\Views\uAdicionarServicos.pas' {AdicionarServicos},
-  uSeguranca in 'Source\Views\uSeguranca.pas' {Seguranca},
   uBuscarServicos in 'Source\Views\uBuscarServicos.pas' {BuscarServicos},
   uHelpers in 'Source\Helpers\uHelpers.pas',
-  uBotaoLogar in 'Source\Views\uBotaoLogar.pas' {BotaoLogar};
+  uBotaoLogar in 'Source\Views\uBotaoLogar.pas' {BotaoLogar},
+  uSeguranca in 'Source\Views\uSeguranca.pas' {Seguranca};
 
 {$R *.res}
 
@@ -30,5 +30,6 @@ begin
   Application.CreateForm(TSeguranca, Seguranca);
   Application.CreateForm(TBuscarServicos, BuscarServicos);
   Application.CreateForm(TBotaoLogar, BotaoLogar);
+  Application.CreateForm(TSeguranca, Seguranca);
   Application.Run;
 end.
