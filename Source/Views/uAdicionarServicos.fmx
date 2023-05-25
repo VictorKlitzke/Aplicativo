@@ -211,24 +211,19 @@ object AdicionarServicos: TAdicionarServicos
         Position.Y = 320.000000000000000000
         TabOrder = 2
       end
-      object Layout2: TLayout
-        Position.X = 40.000000000000000000
-        Position.Y = 400.000000000000000000
-        TabOrder = 3
-      end
       object Layout3: TLayout
         Position.X = 32.000000000000000000
         Position.Y = 456.000000000000000000
-        TabOrder = 4
+        TabOrder = 3
       end
       object Layout4: TLayout
         Position.Y = 520.000000000000000000
-        TabOrder = 5
+        TabOrder = 4
       end
       object Layout5: TLayout
         Position.X = 120.000000000000000000
         Position.Y = 552.000000000000000000
-        TabOrder = 6
+        TabOrder = 5
       end
       object LayoutInfoValores: TLayout
         Align = Top
@@ -236,7 +231,7 @@ object AdicionarServicos: TAdicionarServicos
         Size.Width = 287.000000000000000000
         Size.Height = 135.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 7
+        TabOrder = 6
         object pnValores: TRectangle
           Align = Client
           Fill.Color = xFF1E1E1E
@@ -274,6 +269,13 @@ object AdicionarServicos: TAdicionarServicos
                 TabOrder = 1
               end
             end
+          end
+          object Layout2: TLayout
+            Align = Client
+            Size.Width = 287.000000000000000000
+            Size.Height = 62.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
           end
         end
       end
