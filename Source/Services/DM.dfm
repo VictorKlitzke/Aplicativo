@@ -5,14 +5,14 @@ object Banco: TBanco
   object Connection: TUniConnection
     ProviderName = 'mySQL'
     Port = 3306
-    Database = 'hifuzion'
-    Username = 'HFZ'
+    Database = 'vgmobile'
+    Username = 'VGServices'
     Server = '192.168.0.102'
     Connected = True
     LoginPrompt = False
     Left = 24
     Top = 32
-    EncryptedPassword = '97FF99FF85FF'
+    EncryptedPassword = '89FF98FF'
   end
   object MySQLUniProvider: TMySQLUniProvider
     Left = 112
