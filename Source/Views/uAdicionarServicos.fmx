@@ -1,29 +1,25 @@
-object AdicionarServicos: TAdicionarServicos
+﻿object AdicionarServicos: TAdicionarServicos
   Left = 0
   Top = 0
   BorderStyle = None
-  ClientHeight = 625
+  ClientHeight = 973
   ClientWidth = 299
   Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  OnCreate = FormCreate
+  OnShow = FormShow
   DesignerMasterStyle = 3
-  object ScrollAdicionarServicos: TVertScrollBox
+  object LayoutContent: TLayout
     Align = Client
     Size.Width = 299.000000000000000000
-    Size.Height = 625.000000000000000000
+    Size.Height = 973.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 0
-    OnApplyStyleLookup = FormCreate
-    OnViewportPositionChange = ScrollAdicionarServicosViewportPositionChange
-    Viewport.Width = 299.000000000000000000
-    Viewport.Height = 625.000000000000000000
+    TabOrder = 2
     object pnContent: TRectangle
       Align = Client
       Size.Width = 299.000000000000000000
-      Size.Height = 625.000000000000000000
+      Size.Height = 973.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
       object LayoutCenter: TLayout
@@ -575,7 +571,7 @@ object AdicionarServicos: TAdicionarServicos
                   Size.Height = 33.000000000000000000
                   Size.PlatformDefault = False
                   TabOrder = 1
-                  object Edit1: TEdit
+                  object edtEstado: TEdit
                     Touch.InteractiveGestures = [LongTap, DoubleTap]
                     Align = Bottom
                     StyleLookup = 'transparentedit'
@@ -589,10 +585,117 @@ object AdicionarServicos: TAdicionarServicos
                   end
                 end
               end
+              object LayoutCenterEndNumero: TLayout
+                Align = Center
+                Size.Width = 266.000000000000000000
+                Size.Height = 47.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 3
+                object LayoutEnd: TLayout
+                  Align = Client
+                  Size.Width = 128.000000000000000000
+                  Size.Height = 47.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  object LayoutLabelNumero: TLayout
+                    Align = Top
+                    Size.Width = 128.000000000000000000
+                    Size.Height = 17.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object LBEndereço: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Style]
+                      Size.Width = 128.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Endere'#231'o'
+                      TabOrder = 0
+                    end
+                  end
+                  object edtEnd: TEdit
+                    Touch.InteractiveGestures = [LongTap, DoubleTap]
+                    Align = Bottom
+                    TabOrder = 1
+                    Position.Y = 15.000000000000000000
+                    Size.Width = 128.000000000000000000
+                    Size.Height = 32.000000000000000000
+                    Size.PlatformDefault = False
+                  end
+                end
+                object LayoutNumero: TLayout
+                  Align = Right
+                  Position.X = 128.000000000000000000
+                  Size.Width = 138.000000000000000000
+                  Size.Height = 47.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 1
+                  object LayoutLabelEnd: TLayout
+                    Align = Top
+                    Size.Width = 138.000000000000000000
+                    Size.Height = 17.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object LBNumero: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Style]
+                      Size.Width = 138.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Numero'
+                      TabOrder = 0
+                    end
+                  end
+                  object edtNumero: TEdit
+                    Touch.InteractiveGestures = [LongTap, DoubleTap]
+                    Align = Bottom
+                    TabOrder = 1
+                    Position.Y = 15.000000000000000000
+                    Size.Width = 138.000000000000000000
+                    Size.Height = 32.000000000000000000
+                    Size.PlatformDefault = False
+                  end
+                end
+              end
             end
           end
         end
       end
+      object LayoutBottomSalvar: TLayout
+        Align = Bottom
+        Position.Y = 888.000000000000000000
+        Size.Width = 299.000000000000000000
+        Size.Height = 85.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object LayoutSalvar: TLayout
+          Align = Center
+          Size.Width = 266.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object btnSalvar: TButton
+            Align = Client
+            Size.Width = 266.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Salvar'
+            TextSettings.Font.Size = 18.000000000000000000
+          end
+        end
+      end
     end
+  end
+  object qrAdicionarServicos: TUniQuery
+    Connection = Banco.Connection
+    SQL.Strings = (
+      'select * from servicos')
+    Left = 136
+    Top = 472
   end
 end

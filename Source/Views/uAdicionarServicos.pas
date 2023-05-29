@@ -22,11 +22,16 @@ uses
   FMX.Layouts,
   System.Math.Vectors,
   FMX.Controls3D,
-  FMX.Layers3D;
+  FMX.Layers3D,
+  Data.DB,
+  MemDS,
+  DBAccess,
+  Uni;
 
 type
   TAdicionarServicos = class(TForm)
-    ScrollAdicionarServicos: TVertScrollBox;
+    qrAdicionarServicos: TUniQuery;
+    LayoutContent: TLayout;
     pnContent: TRectangle;
     LayoutCenter: TLayout;
     LayoutInfoServicos: TLayout;
@@ -93,13 +98,22 @@ type
     Layout3D1: TLayout3D;
     Estado: TLabel;
     LayoutEditEstado: TLayout;
-    Edit1: TEdit;
-    procedure FormCreate(Sender: TObject);
-    procedure ScrollAdicionarServicosViewportPositionChange(Sender: TObject;
-      const OldViewportPosition, NewViewportPosition: TPointF;
-      const ContentSizeChanged: Boolean);
+    edtEstado: TEdit;
+    LayoutCenterEndNumero: TLayout;
+    LayoutEnd: TLayout;
+    LayoutLabelNumero: TLayout;
+    LBEndereço: TLabel;
+    edtEnd: TEdit;
+    LayoutNumero: TLayout;
+    LayoutLabelEnd: TLayout;
+    LBNumero: TLabel;
+    edtNumero: TEdit;
+    LayoutBottomSalvar: TLayout;
+    LayoutSalvar: TLayout;
+    btnSalvar: TButton;
+    procedure FormShow(Sender: TObject);
   private
-    { Private declarations }
+    procedure SalvarDados;
   public
     { Public declarations }
   end;
@@ -109,21 +123,39 @@ var
 
 implementation
 
+uses
+  DM;
+
 {$R *.fmx}
 {$R *.LgXhdpiTb.fmx ANDROID}
 {$R *.LgXhdpiPh.fmx ANDROID}
 
-procedure TAdicionarServicos.FormCreate(Sender: TObject);
+procedure TAdicionarServicos.FormShow(Sender: TObject);
 begin
-  ScrollAdicionarServicos.ViewportPosition := PointF(ScrollAdicionarServicos.ViewportPosition.X, ScrollAdicionarServicos.ViewportPosition.Y + 10000);
+  DM.Banco.Connection.Connected := True;
 end;
 
-procedure TAdicionarServicos.ScrollAdicionarServicosViewportPositionChange(
-  Sender: TObject; const OldViewportPosition,
-  NewViewportPosition: TPointF;
-  const ContentSizeChanged: Boolean);
+procedure TAdicionarServicos.SalvarDados;
 begin
-ScrollAdicionarServicos.ViewportPosition := PointF(ScrollAdicionarServicos.ViewportPosition.X, ScrollAdicionarServicos.ViewportPosition.Y + 10000);
+  DM.Banco.Connection.StartTransaction;
+  try
+    qrAdicionarServicos.Insert;
+    qrAdicionarServicos.FieldByName('servico').AsString;
+    qrAdicionarServicos.FieldByName('descricao').AsString;
+    qrAdicionarServicos.FieldByName('valor').AsString;
+    qrAdicionarServicos.FieldByName('desconto').AsString;
+    qrAdicionarServicos.FieldByName('forma_pagamento').AsString;
+    qrAdicionarServicos.FieldByName('estado').AsString;
+    qrAdicionarServicos.FieldByName('cidade').AsString;
+    qrAdicionarServicos.FieldByName('endereco').AsString;
+    qrAdicionarServicos.FieldByName('bairro').AsString;
+    qrAdicionarServicos.Post;
+  except
+    on e: Exception do
+    begin
+      ShowMessage('Erro ao adicionar serviço' + e.Message);
+    end;
+  end;
 end;
 
 end.

@@ -66,7 +66,6 @@ type
     LayoutHeader: TLayout;
     pnPesquisaMenu: TRectangle;
     LayoutPesquisaMenu: TLayout;
-    RoundRectPesquisa: TRoundRect;
     LayoutMenuMensagem: TLayout;
     ImageMensagem: TImage;
     ImageMenu: TImage;
@@ -111,6 +110,7 @@ type
     qrListarENDERECO: TStringField;
     qrListarID_USUARIO: TIntegerField;
     edtPesquisa: TEdit;
+    pnPesquisarServicos: TRectangle;
     procedure FloatAnimationFinish(Sender: TObject);
     procedure ImageMenuClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -292,7 +292,10 @@ begin
 end;
 
 procedure TPrincipal.LBSegurancaClick(Sender: TObject);
+var
+  Abrir: TForm;
 begin
+  Seguranca.Parent := pnContent;
   Seguranca.Show;
 end;
 
@@ -304,7 +307,7 @@ end;
 
 procedure TPrincipal.LBVERClick(Sender: TObject);
 begin
+  Perfil.Parent := pnContent;
   Perfil.Show;
 end;
-
 end.
