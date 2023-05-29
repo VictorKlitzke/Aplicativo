@@ -50,7 +50,6 @@ type
     qrUsuarioLoginLOGADO: TIntegerField;
     procedure FormShow(Sender: TObject);
     procedure LBLoginClick(Sender: TObject);
-    procedure LayoutBClick(Sender: TObject);
   private
     procedure Logar;
   public

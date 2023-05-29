@@ -88,7 +88,7 @@ type
     LBProfissaoCarousel: TLabel;
     LayoutPopulares: TLayout;
     LayoutNomePopulares: TLayout;
-    Label1: TLabel;
+    LBNomePopulares: TLabel;
     Layout1: TLayout;
     Layout2: TLayout;
     HorzScrollBox1: THorzScrollBox;

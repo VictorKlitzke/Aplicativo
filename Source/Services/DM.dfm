@@ -7,7 +7,7 @@ object Banco: TBanco
     Port = 3306
     Database = 'vgmobile'
     Username = 'VGServices'
-    Server = '192.168.0.103'
+    Server = '10.1.1.103'
     Connected = True
     LoginPrompt = False
     Left = 24
@@ -22,7 +22,6 @@ object Banco: TBanco
     Connection = Connection
     SQL.Strings = (
       'select * from usuarios where id = :id')
-    Active = True
     Left = 320
     Top = 104
     ParamData = <
@@ -96,7 +95,6 @@ object Banco: TBanco
       'FROM   '
       ' USUARIOS USUARIOS '
       ' JOIN SERVICOS ON SERVICOS.ID_USUARIO = USUARIOS.ID')
-    Active = True
     Left = 320
     Top = 5
     object qrListarID_USERS: TIntegerField

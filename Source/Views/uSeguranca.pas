@@ -17,12 +17,16 @@ uses
   FMX.Controls.Presentation,
   FMX.StdCtrls,
   FMX.Layouts,
-  FMX.Edit, Data.DB, MemDS, DBAccess, Uni;
+  FMX.Edit,
+  Data.DB,
+  MemDS,
+  DBAccess,
+  Uni;
 
 type
   TSeguranca = class(TForm)
     pnContent: TRectangle;
-    RoundRectanimation: TRoundRect;
+    RoundRectAnimation: TRoundRect;
     qrUsuariosDeletar: TUniQuery;
     dsUsuariosdeletar: TDataSource;
     qrUsuariosDeletarSTATUS: TIntegerField;
