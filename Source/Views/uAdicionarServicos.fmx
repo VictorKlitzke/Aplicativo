@@ -8,15 +8,16 @@ object AdicionarServicos: TAdicionarServicos
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 3
-  object Scroll: TScrollBox
+  object ScrollAdicionarServicos: TVertScrollBox
     Align = Client
-    EnableDragHighlight = False
     Size.Width = 299.000000000000000000
     Size.Height = 625.000000000000000000
     Size.PlatformDefault = False
-    StyleLookup = 'scrollboxstyle'
     TabOrder = 0
+    OnApplyStyleLookup = FormCreate
+    OnViewportPositionChange = ScrollAdicionarServicosViewportPositionChange
     Viewport.Width = 299.000000000000000000
     Viewport.Height = 625.000000000000000000
     object pnContent: TRectangle
@@ -61,13 +62,16 @@ object AdicionarServicos: TAdicionarServicos
                 object edtDescriscao: TMemo
                   Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
                   DataDetectorTypes = []
+                  StyledSettings = [Family, Size, Style]
+                  TextSettings.FontColor = claWhite
                   Align = Client
                   Size.Width = 233.000000000000000000
                   Size.Height = 50.000000000000000000
                   Size.PlatformDefault = False
+                  StyleLookup = 'transparentedit'
                   TabOrder = 0
-                  Viewport.Width = 233.000000000000000000
-                  Viewport.Height = 50.000000000000000000
+                  Viewport.Width = 225.000000000000000000
+                  Viewport.Height = 42.000000000000000000
                 end
               end
               object LayoutLabelDescricao: TLayout
@@ -111,11 +115,14 @@ object AdicionarServicos: TAdicionarServicos
                 object edtProfissao: TEdit
                   Touch.InteractiveGestures = [LongTap, DoubleTap]
                   Align = Bottom
+                  StyleLookup = 'transparentedit'
                   TabOrder = 0
+                  TextSettings.FontColor = claWhite
                   Position.Y = -10.000000000000000000
                   Size.Width = 233.000000000000000000
                   Size.Height = 32.000000000000000000
                   Size.PlatformDefault = False
+                  StyledSettings = [Family, Size, Style]
                 end
               end
               object LayoutLabelProfissao: TLayout
@@ -160,11 +167,14 @@ object AdicionarServicos: TAdicionarServicos
                 object edtTelefone: TEdit
                   Touch.InteractiveGestures = [LongTap, DoubleTap]
                   Align = Bottom
+                  StyleLookup = 'transparentedit'
                   TabOrder = 0
+                  TextSettings.FontColor = claWhite
                   Position.Y = -7.000000000000000000
                   Size.Width = 235.000000000000000000
                   Size.Height = 32.000000000000000000
                   Size.PlatformDefault = False
+                  StyledSettings = [Family, Size, Style]
                 end
               end
               object LayoutLabelTelefone: TLayout
@@ -266,11 +276,14 @@ object AdicionarServicos: TAdicionarServicos
                     object edtDesconto: TEdit
                       Touch.InteractiveGestures = [LongTap, DoubleTap]
                       Align = Bottom
+                      StyleLookup = 'transparentedit'
                       TabOrder = 0
+                      TextSettings.FontColor = claWhite
                       Position.Y = 1.000000000000000000
                       Size.Width = 119.000000000000000000
                       Size.Height = 32.000000000000000000
                       Size.PlatformDefault = False
+                      StyledSettings = [Family, Size, Style]
                     end
                   end
                   object LayoutLabelDescontos: TLayout
@@ -325,11 +338,14 @@ object AdicionarServicos: TAdicionarServicos
                     object edtValor: TEdit
                       Touch.InteractiveGestures = [LongTap, DoubleTap]
                       Align = Bottom
+                      StyleLookup = 'transparentedit'
                       TabOrder = 0
+                      TextSettings.FontColor = claWhite
                       Position.Y = 1.000000000000000000
                       Size.Width = 119.000000000000000000
                       Size.Height = 32.000000000000000000
                       Size.PlatformDefault = False
+                      StyledSettings = [Family, Size, Style]
                     end
                   end
                 end
@@ -374,11 +390,14 @@ object AdicionarServicos: TAdicionarServicos
                   object edtFormaPagamento: TEdit
                     Touch.InteractiveGestures = [LongTap, DoubleTap]
                     Align = Bottom
+                    StyleLookup = 'transparentedit'
                     TabOrder = 0
+                    TextSettings.FontColor = claWhite
                     Position.Y = 1.000000000000000000
                     Size.Width = 263.000000000000000000
                     Size.Height = 32.000000000000000000
                     Size.PlatformDefault = False
+                    StyledSettings = [Family, Size, Style]
                   end
                 end
               end
@@ -448,11 +467,14 @@ object AdicionarServicos: TAdicionarServicos
                   object edtBairro: TEdit
                     Touch.InteractiveGestures = [LongTap, DoubleTap]
                     Align = Bottom
+                    StyleLookup = 'transparentedit'
                     TabOrder = 0
+                    TextSettings.FontColor = claWhite
                     Position.Y = 1.000000000000000000
                     Size.Width = 266.000000000000000000
                     Size.Height = 32.000000000000000000
                     Size.PlatformDefault = False
+                    StyledSettings = [Family, Size, Style]
                   end
                 end
                 object LayoutLabelBairro: TLayout
@@ -508,11 +530,14 @@ object AdicionarServicos: TAdicionarServicos
                   object edtCidade: TEdit
                     Touch.InteractiveGestures = [LongTap, DoubleTap]
                     Align = Bottom
+                    StyleLookup = 'transparentedit'
                     TabOrder = 0
+                    TextSettings.FontColor = claWhite
                     Position.Y = 1.000000000000000000
                     Size.Width = 266.000000000000000000
                     Size.Height = 32.000000000000000000
                     Size.PlatformDefault = False
+                    StyledSettings = [Family, Size, Style]
                   end
                 end
               end
@@ -553,11 +578,14 @@ object AdicionarServicos: TAdicionarServicos
                   object Edit1: TEdit
                     Touch.InteractiveGestures = [LongTap, DoubleTap]
                     Align = Bottom
+                    StyleLookup = 'transparentedit'
                     TabOrder = 0
+                    TextSettings.FontColor = claWhite
                     Position.Y = 1.000000000000000000
                     Size.Width = 266.000000000000000000
                     Size.Height = 32.000000000000000000
                     Size.PlatformDefault = False
+                    StyledSettings = [Family, Size, Style]
                   end
                 end
               end

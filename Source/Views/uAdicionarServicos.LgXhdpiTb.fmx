@@ -2,7 +2,7 @@ inherited AdicionarServicos_LgXhdpiTb: TAdicionarServicos_LgXhdpiTb
   ClientHeight = 854
   ClientWidth = 480
   DesignerMasterStyle = 3
-  inherited Scroll: TScrollBox
+  inherited ScrollAdicionarServicos: TVertScrollBox
     Size.Width = 480.000000000000000000
     Size.Height = 854.000000000000000000
     Viewport.Width = 480.000000000000000000

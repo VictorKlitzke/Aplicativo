@@ -26,7 +26,7 @@ uses
 
 type
   TAdicionarServicos = class(TForm)
-    Scroll: TScrollBox;
+    ScrollAdicionarServicos: TVertScrollBox;
     pnContent: TRectangle;
     LayoutCenter: TLayout;
     LayoutInfoServicos: TLayout;
@@ -80,20 +80,24 @@ type
     LayoutCenterRegiao: TLayout;
     LayoutBairro: TLayout;
     LayoutEditBairro: TLayout;
+    edtBairro: TEdit;
     LayoutLabelBairro: TLayout;
+    LBBairro: TLabel;
     LayoutCidade: TLayout;
     LayoutLabelCidade: TLayout;
+    LBCidade: TLabel;
     LayoutEditCidade: TLayout;
+    edtCidade: TEdit;
     LayoutEstado: TLayout;
     LayoutLabelEstado: TLayout;
     Layout3D1: TLayout3D;
-    LayoutEditEstado: TLayout;
     Estado: TLabel;
-    LBCidade: TLabel;
-    LBBairro: TLabel;
+    LayoutEditEstado: TLayout;
     Edit1: TEdit;
-    edtCidade: TEdit;
-    edtBairro: TEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure ScrollAdicionarServicosViewportPositionChange(Sender: TObject;
+      const OldViewportPosition, NewViewportPosition: TPointF;
+      const ContentSizeChanged: Boolean);
   private
     { Private declarations }
   public
@@ -108,5 +112,18 @@ implementation
 {$R *.fmx}
 {$R *.LgXhdpiTb.fmx ANDROID}
 {$R *.LgXhdpiPh.fmx ANDROID}
+
+procedure TAdicionarServicos.FormCreate(Sender: TObject);
+begin
+  ScrollAdicionarServicos.ViewportPosition := PointF(ScrollAdicionarServicos.ViewportPosition.X, ScrollAdicionarServicos.ViewportPosition.Y + 10000);
+end;
+
+procedure TAdicionarServicos.ScrollAdicionarServicosViewportPositionChange(
+  Sender: TObject; const OldViewportPosition,
+  NewViewportPosition: TPointF;
+  const ContentSizeChanged: Boolean);
+begin
+ScrollAdicionarServicos.ViewportPosition := PointF(ScrollAdicionarServicos.ViewportPosition.X, ScrollAdicionarServicos.ViewportPosition.Y + 10000);
+end;
 
 end.
