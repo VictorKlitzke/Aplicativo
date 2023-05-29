@@ -12,6 +12,7 @@
   DesignerMasterStyle = 3
   object LayoutContent: TLayout
     Align = Client
+    Anchors = []
     Size.Width = 299.000000000000000000
     Size.Height = 973.000000000000000000
     Size.PlatformDefault = False
