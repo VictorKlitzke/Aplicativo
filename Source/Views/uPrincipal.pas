@@ -110,6 +110,7 @@ type
     qrListarBAIRRO: TStringField;
     qrListarENDERECO: TStringField;
     qrListarID_USUARIO: TIntegerField;
+    edtPesquisa: TEdit;
     procedure FloatAnimationFinish(Sender: TObject);
     procedure ImageMenuClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -177,6 +178,7 @@ begin
     FloatAnimation.Inverse := false;
     FloatAnimation.Start;
     pnSubMenu.AnimateFloat('Opacity', 1, 0.4);
+    pnContent.AnimateFloat('Opacity', 0.6);
     pnSubMenu.Position.X := Width;
     Timer.Enabled := True;
     pnSubMenu.Tag := 1;
@@ -197,6 +199,7 @@ begin
   begin
     FloatAnimation.Inverse := true;
     FloatAnimation.Start;
+
     pnSubMenu.AnimateFloat('Opacity', 0, 0.4);
     pnSubMenu.Tag := 0;
   end;
@@ -206,11 +209,11 @@ procedure TPrincipal.FloatAnimationFinish(Sender: TObject);
 begin
   if Principal.Width < 600 then
   begin
-    ImageMenu.AnimateFloat('Opacity', 1, 0.2);
+    ImageMenu.AnimateFloat('Opacity', 1, 2);
   end
   else
   begin
-    ImageMenu.AnimateFloat('Opacity', 1, 0.2);
+    ImageMenu.AnimateFloat('Opacity', 2, 2);
   end;
 end;
 
@@ -229,7 +232,7 @@ begin
   begin
     pnSubMenu.Width := 0;
     FloatAnimation.StartValue := 0;
-    FloatAnimation.StopValue := 200; 
+    FloatAnimation.StopValue := 200;
     FloatAnimation.Inverse := false;
   end;
   LayoutImg := TLayout.Create(Self);
@@ -262,9 +265,14 @@ begin
   if Principal.pnSubMenu.Tag = 0 then
   begin
     OpenMenu;
-  end else
+    LayoutContentCenter.AnimateFloat('Opacity', 0.4);
+    pnContent.Fill.Color := TAlphaColorRec.Black;
+  end
+  else
   begin
     CloseMenu;
+    LayoutContentCenter.AnimateFloat('Opacity', 4);
+    pnContent.Fill.Color := TAlphaColorRec.ColorToRGB($FFE0E0E0);
   end;
 end;
 
