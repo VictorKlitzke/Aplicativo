@@ -17,7 +17,11 @@ uses
   FMX.Controls.Presentation,
   FMX.StdCtrls,
   FMX.Layouts,
-  FMX.Edit, Data.DB, MemDS, DBAccess, Uni;
+  FMX.Edit,
+  Data.DB,
+  MemDS,
+  DBAccess,
+  Uni;
 
 type
   TLoginUsuario = class(TForm)
@@ -35,18 +39,20 @@ type
     LayoutBotao: TLayout;
     LayoutB: TLayout;
     LayoutFinalTela: TLayout;
-    Edit1: TEdit;
-    Edit2: TEdit;
+    edtNomeEmail: TEdit;
+    edtSenha: TEdit;
     pnBotao: TRectangle;
     LBLogin: TLabel;
     qrUsuarioLogin: TUniQuery;
     qrUsuarioLoginNOME: TStringField;
     qrUsuarioLoginEMAIL: TStringField;
     qrUsuarioLoginSENHA: TStringField;
+    qrUsuarioLoginLOGADO: TIntegerField;
     procedure FormShow(Sender: TObject);
     procedure LBLoginClick(Sender: TObject);
+    procedure LayoutBClick(Sender: TObject);
   private
-    function Logar(nome, email, senha: string): Boolean;
+    procedure Logar;
   public
     { Public declarations }
   end;
@@ -64,47 +70,46 @@ uses
 procedure TLoginUsuario.FormShow(Sender: TObject);
 begin
   DM.Banco.Connection.Connected := True;
+  qrUsuarioLogin.Active := True;
 end;
 
 procedure TLoginUsuario.LBLoginClick(Sender: TObject);
-var
-  usuario,
-  email,
-  senha: string;
 begin
-
+  Logar;
 end;
 
-function TLoginUsuario.Logar(nome, email, senha: string): Boolean;
+procedure TLoginUsuario.Logar;
 begin
-  Result := False;
-
   try
     DM.Banco.Connection.StartTransaction;
 
     qrUsuarioLogin.Close;
-    qrUsuarioLogin.SQL.Text := 'SELECT * FROM usuarios WHERE nome = :nome AND senha = :senha';
-    qrUsuarioLogin.ParamByName('NOME').AsString;
-    qrUsuarioLogin.ParamByName('EMAIL').AsString;
-    qrUsuarioLogin.ParamByName('SENHA').AsString;
+    qrUsuarioLogin.SQL.Text := 'SELECT U.NOME, U.EMAIL, U.SENHA, U.LOGADO FROM usuarios U WHERE nome = :nome AND email = :email AND senha = :senha';
+    qrUsuarioLogin.ParamByName('NOME').AsString := edtNomeEmail.Text;
+    qrUsuarioLogin.ParamByName('EMAIL').AsString := edtNomeEmail.Text;
+    qrUsuarioLogin.ParamByName('SENHA').AsString := edtSenha.Text;
+    qrUsuarioLogin.ParamByName('LOGADO').AsInteger := 1;
     qrUsuarioLogin.Open;
 
     if not qrUsuarioLogin.IsEmpty then
     begin
-      Result := True;
-
-      DM.Id := qrUsuarioLogin.ParamByName('ID').AsInteger;
-      DM.Status := qrUsuarioLogin.ParamByName('STATUS').AsInteger;
-      DM.Nome := qrUsuarioLogin.ParamByName('NOME').AsString;
-      DM.Profissao := qrUsuarioLogin.ParamByName('PROFISSAO').AsString;
-      DM.Telefone := qrUsuarioLogin.ParamByName('TELEFONE').AsString;
+      qrUsuarioLogin.ParamByName('ID').AsInteger := DM.Id;
+      qrUsuarioLogin.ParamByName('STATUS').AsInteger := DM.Status;
+      qrUsuarioLogin.ParamByName('NOME').AsString := DM.Nome;
+      qrUsuarioLogin.ParamByName('PROFISSAO').AsString := DM.Profissao;
+      qrUsuarioLogin.ParamByName('TELEFONE').AsString := DM.Telefone;
+      qrUsuarioLogin.ParamByName('LOGADO').AsInteger := DM.Logado;
     end;
+
+    DM.Banco.Connection.Commit;
+
+    Principal.Show;
   except
     on e: Exception do
     begin
       ShowMessage('Erro ao fazer o login' + e.Message);
+      DM.Banco.Connection.Rollback;
     end;
   end;
 end;
-
 end.

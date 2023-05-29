@@ -7,7 +7,7 @@ object Banco: TBanco
     Port = 3306
     Database = 'vgmobile'
     Username = 'VGServices'
-    Server = '192.168.0.102'
+    Server = '192.168.0.103'
     Connected = True
     LoginPrompt = False
     Left = 24
@@ -22,6 +22,7 @@ object Banco: TBanco
     Connection = Connection
     SQL.Strings = (
       'select * from usuarios where id = :id')
+    Active = True
     Left = 320
     Top = 104
     ParamData = <
@@ -42,17 +43,17 @@ object Banco: TBanco
     object qrUsuariosPSQEMAIL: TStringField
       FieldName = 'EMAIL'
       Required = True
-      Size = 40
+      Size = 50
     end
     object qrUsuariosPSQTELEFONE: TStringField
       FieldName = 'TELEFONE'
       Required = True
-      Size = 12
+      Size = 25
     end
     object qrUsuariosPSQSENHA: TStringField
       FieldName = 'SENHA'
       Required = True
-      Size = 7
+      Size = 12
     end
     object qrUsuariosPSQPROFISSAO: TStringField
       FieldName = 'PROFISSAO'
@@ -61,6 +62,10 @@ object Banco: TBanco
     end
     object qrUsuariosPSQSTATUS: TIntegerField
       FieldName = 'STATUS'
+      Required = True
+    end
+    object qrUsuariosPSQLOGADO: TIntegerField
+      FieldName = 'LOGADO'
       Required = True
     end
   end
@@ -72,6 +77,7 @@ object Banco: TBanco
       ' USUARIOS.ID AS ID_USERS, '
       ' USUARIOS.NOME, '
       ' USUARIOS.EMAIL, '
+      ' USUARIOS.LOGADO,'
       ' USUARIOS.TELEFONE, '
       ' USUARIOS.SENHA,  '
       ' USUARIOS.PROFISSAO,     '
@@ -90,6 +96,7 @@ object Banco: TBanco
       'FROM   '
       ' USUARIOS USUARIOS '
       ' JOIN SERVICOS ON SERVICOS.ID_USUARIO = USUARIOS.ID')
+    Active = True
     Left = 320
     Top = 5
     object qrListarID_USERS: TIntegerField
@@ -104,17 +111,17 @@ object Banco: TBanco
     object qrListarEMAIL: TStringField
       FieldName = 'EMAIL'
       Required = True
-      Size = 40
+      Size = 50
     end
     object qrListarTELEFONE: TStringField
       FieldName = 'TELEFONE'
       Required = True
-      Size = 12
+      Size = 25
     end
     object qrListarSENHA: TStringField
       FieldName = 'SENHA'
       Required = True
-      Size = 7
+      Size = 12
     end
     object qrListarPROFISSAO: TStringField
       FieldName = 'PROFISSAO'
@@ -152,35 +159,39 @@ object Banco: TBanco
       FieldName = 'FORMA_PAGAMENTO'
       ReadOnly = True
       Required = True
-      Size = 100
+      Size = 50
     end
     object qrListarESTADO: TStringField
       FieldName = 'ESTADO'
       ReadOnly = True
       Required = True
-      Size = 100
+      Size = 50
     end
     object qrListarCIDADE: TStringField
       FieldName = 'CIDADE'
       ReadOnly = True
       Required = True
-      Size = 100
+      Size = 50
     end
     object qrListarBAIRRO: TStringField
       FieldName = 'BAIRRO'
       ReadOnly = True
       Required = True
-      Size = 100
+      Size = 50
     end
     object qrListarENDERECO: TStringField
       FieldName = 'ENDERECO'
       ReadOnly = True
       Required = True
-      Size = 100
+      Size = 50
     end
     object qrListarID_USUARIO: TIntegerField
       FieldName = 'ID_USUARIO'
       ReadOnly = True
+      Required = True
+    end
+    object qrListarLOGADO: TIntegerField
+      FieldName = 'LOGADO'
       Required = True
     end
   end

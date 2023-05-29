@@ -43,6 +43,8 @@ type
     qrListarBAIRRO: TStringField;
     qrListarENDERECO: TStringField;
     qrListarID_USUARIO: TIntegerField;
+    qrUsuariosPSQLOGADO: TIntegerField;
+    qrListarLOGADO: TIntegerField;
   private
     { Private declarations }
   public
@@ -52,7 +54,8 @@ type
 var
   Banco: TBanco;
   Id,
-  Status: Integer;
+  Status,
+  Logado: Integer;
   Nome,
   Profissao,
   Telefone,
