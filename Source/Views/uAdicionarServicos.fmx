@@ -8,685 +8,696 @@
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   OnShow = FormShow
   DesignerMasterStyle = 3
-  object LayoutContent: TLayout
+  object ScrollAdicionarServicos: TVertScrollBox
     Align = Client
-    Anchors = []
     Size.Width = 299.000000000000000000
     Size.Height = 973.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
-    object pnContent: TRectangle
+    TabOrder = 3
+    Viewport.Width = 299.000000000000000000
+    Viewport.Height = 973.000000000000000000
+    object LayoutContent: TLayout
       Align = Client
+      Anchors = []
       Size.Width = 299.000000000000000000
       Size.Height = 973.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
-      object LayoutCenter: TLayout
-        Align = Center
-        Size.Width = 287.000000000000000000
-        Size.Height = 603.000000000000000000
+      TabOrder = 2
+      object pnContent: TRectangle
+        Align = Client
+        Size.Width = 299.000000000000000000
+        Size.Height = 973.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 0
-        object LayoutInfoServicos: TLayout
-          Align = Top
+        Stroke.Kind = None
+        object LayoutCenter: TLayout
+          Align = Center
           Size.Width = 287.000000000000000000
-          Size.Height = 189.000000000000000000
+          Size.Height = 603.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          object pnInfoServicos: TRectangle
-            Align = Client
-            Fill.Color = xFF1E1E1E
+          object LayoutInfoServicos: TLayout
+            Align = Top
             Size.Width = 287.000000000000000000
             Size.Height = 189.000000000000000000
             Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 2.000000000000000000
-            YRadius = 2.000000000000000000
-            object LayoutDescriscao: TLayout
-              Align = Client
-              Size.Width = 287.000000000000000000
-              Size.Height = 89.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 0
-              object LayoutDes: TLayout
-                Align = Center
-                Size.Width = 233.000000000000000000
-                Size.Height = 50.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 0
-                object edtDescriscao: TMemo
-                  Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-                  DataDetectorTypes = []
-                  StyledSettings = [Family, Size, Style]
-                  TextSettings.FontColor = claWhite
-                  Align = Client
-                  Size.Width = 233.000000000000000000
-                  Size.Height = 50.000000000000000000
-                  Size.PlatformDefault = False
-                  StyleLookup = 'transparentedit'
-                  TabOrder = 0
-                  Viewport.Width = 225.000000000000000000
-                  Viewport.Height = 42.000000000000000000
-                end
-              end
-              object LayoutLabelDescricao: TLayout
-                Align = Top
-                Size.Width = 287.000000000000000000
-                Size.Height = 20.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 1
-                object LayoutLBDes: TLayout
-                  Align = Center
-                  Size.Width = 237.000000000000000000
-                  Size.Height = 17.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 0
-                  object LBDescriscao: TLabel
-                    Align = Client
-                    StyledSettings = [Family, Style]
-                    Size.Width = 237.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TextSettings.Font.Size = 13.000000000000000000
-                    TextSettings.FontColor = claWhite
-                    Text = 'Descri'#231#227'o'
-                    TabOrder = 0
-                  end
-                end
-              end
-            end
-            object LayoutProfissao: TLayout
-              Align = Top
-              Size.Width = 287.000000000000000000
-              Size.Height = 50.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 1
-              object LayoutPro: TLayout
-                Align = Center
-                Size.Width = 233.000000000000000000
-                Size.Height = 22.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 0
-                object edtProfissao: TEdit
-                  Touch.InteractiveGestures = [LongTap, DoubleTap]
-                  Align = Bottom
-                  StyleLookup = 'transparentedit'
-                  TabOrder = 0
-                  TextSettings.FontColor = claWhite
-                  Position.Y = -10.000000000000000000
-                  Size.Width = 233.000000000000000000
-                  Size.Height = 32.000000000000000000
-                  Size.PlatformDefault = False
-                  StyledSettings = [Family, Size, Style]
-                end
-              end
-              object LayoutLabelProfissao: TLayout
-                Align = Top
-                Size.Width = 287.000000000000000000
-                Size.Height = 20.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 1
-                object LayoutLBPro: TLayout
-                  Align = Center
-                  Size.Width = 237.000000000000000000
-                  Size.Height = 17.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 0
-                  object LBProfissao: TLabel
-                    Align = Client
-                    StyledSettings = [Family, Style]
-                    Size.Width = 237.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TextSettings.Font.Size = 13.000000000000000000
-                    TextSettings.FontColor = claWhite
-                    Text = 'Nome da profiss'#227'o'
-                    TabOrder = 0
-                  end
-                end
-              end
-            end
-            object LayoutTelefone: TLayout
-              Align = Bottom
-              Position.Y = 139.000000000000000000
-              Size.Width = 287.000000000000000000
-              Size.Height = 50.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 2
-              object LayoutTel: TLayout
-                Align = Center
-                Size.Width = 235.000000000000000000
-                Size.Height = 25.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 0
-                object edtTelefone: TEdit
-                  Touch.InteractiveGestures = [LongTap, DoubleTap]
-                  Align = Bottom
-                  StyleLookup = 'transparentedit'
-                  TabOrder = 0
-                  TextSettings.FontColor = claWhite
-                  Position.Y = -7.000000000000000000
-                  Size.Width = 235.000000000000000000
-                  Size.Height = 32.000000000000000000
-                  Size.PlatformDefault = False
-                  StyledSettings = [Family, Size, Style]
-                end
-              end
-              object LayoutLabelTelefone: TLayout
-                Align = Top
-                Size.Width = 287.000000000000000000
-                Size.Height = 20.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 1
-                object LayoutLBtelefone: TLayout
-                  Align = Center
-                  Size.Width = 237.000000000000000000
-                  Size.Height = 17.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 0
-                  object LBTelefone: TLabel
-                    Align = Client
-                    StyledSettings = [Family, Style]
-                    Size.Width = 237.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TextSettings.Font.Size = 13.000000000000000000
-                    TextSettings.FontColor = claWhite
-                    Text = 'Telefone'
-                    TabOrder = 0
-                  end
-                end
-              end
-            end
-          end
-        end
-        object LayoutValores: TLayout
-          Align = Top
-          Position.Y = 189.000000000000000000
-          Size.Width = 287.000000000000000000
-          Size.Height = 68.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 2
-          object LayoutLBValores: TLayout
-            Align = Center
-            Size.Width = 161.000000000000000000
-            Size.Height = 50.000000000000000000
-            Size.PlatformDefault = False
             TabOrder = 0
-            object LBValores: TLabel
+            object pnInfoServicos: TRectangle
               Align = Client
-              StyledSettings = [Style, FontColor]
-              Size.Width = 161.000000000000000000
-              Size.Height = 50.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Family = 'MS Gothic'
-              TextSettings.Font.Size = 26.000000000000000000
-              TextSettings.HorzAlign = Center
-              Text = 'Valores'
-              TabOrder = 0
-            end
-          end
-        end
-        object LayoutInfoValores: TLayout
-          Align = Top
-          Position.Y = 257.000000000000000000
-          Size.Width = 287.000000000000000000
-          Size.Height = 135.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 3
-          object pnValores: TRectangle
-            Align = Client
-            Fill.Color = xFF1E1E1E
-            Size.Width = 287.000000000000000000
-            Size.Height = 135.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 2.000000000000000000
-            YRadius = 2.000000000000000000
-            object LayoutPreencherValores: TLayout
-              Align = Top
+              Fill.Color = xFF1E1E1E
               Size.Width = 287.000000000000000000
-              Size.Height = 73.000000000000000000
+              Size.Height = 189.000000000000000000
               Size.PlatformDefault = False
-              TabOrder = 0
-              object LayoutValorDesconto: TLayout
-                Align = Center
-                Size.Width = 262.000000000000000000
-                Size.Height = 50.000000000000000000
+              Stroke.Kind = None
+              XRadius = 2.000000000000000000
+              YRadius = 2.000000000000000000
+              object LayoutDescriscao: TLayout
+                Align = Client
+                Size.Width = 287.000000000000000000
+                Size.Height = 89.000000000000000000
                 Size.PlatformDefault = False
                 TabOrder = 0
-                object LayoutDesconto: TLayout
-                  Align = Right
-                  Position.X = 143.000000000000000000
-                  Size.Width = 119.000000000000000000
+                object LayoutDes: TLayout
+                  Align = Center
+                  Size.Width = 233.000000000000000000
                   Size.Height = 50.000000000000000000
                   Size.PlatformDefault = False
                   TabOrder = 0
-                  object LayoutEditlDescontos: TLayout
+                  object edtDescriscao: TMemo
+                    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+                    DataDetectorTypes = []
+                    StyledSettings = [Family, Size, Style]
+                    TextSettings.FontColor = claWhite
                     Align = Client
-                    Size.Width = 119.000000000000000000
-                    Size.Height = 33.000000000000000000
+                    Size.Width = 233.000000000000000000
+                    Size.Height = 50.000000000000000000
                     Size.PlatformDefault = False
+                    StyleLookup = 'transparentedit'
                     TabOrder = 0
-                    object edtDesconto: TEdit
-                      Touch.InteractiveGestures = [LongTap, DoubleTap]
-                      Align = Bottom
-                      StyleLookup = 'transparentedit'
-                      TabOrder = 0
-                      TextSettings.FontColor = claWhite
-                      Position.Y = 1.000000000000000000
-                      Size.Width = 119.000000000000000000
-                      Size.Height = 32.000000000000000000
-                      Size.PlatformDefault = False
-                      StyledSettings = [Family, Size, Style]
-                    end
-                  end
-                  object LayoutLabelDescontos: TLayout
-                    Align = Top
-                    Size.Width = 119.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TabOrder = 1
-                    object LBDescontos: TLabel
-                      Align = Client
-                      StyledSettings = [Family, Style]
-                      Size.Width = 119.000000000000000000
-                      Size.Height = 17.000000000000000000
-                      Size.PlatformDefault = False
-                      TextSettings.Font.Size = 13.000000000000000000
-                      TextSettings.FontColor = claWhite
-                      Text = 'Descontos'
-                      TabOrder = 0
-                    end
+                    Viewport.Width = 225.000000000000000000
+                    Viewport.Height = 42.000000000000000000
                   end
                 end
-                object LayoutValor: TLayout
-                  Align = Left
-                  Size.Width = 119.000000000000000000
-                  Size.Height = 50.000000000000000000
+                object LayoutLabelDescricao: TLayout
+                  Align = Top
+                  Size.Width = 287.000000000000000000
+                  Size.Height = 20.000000000000000000
                   Size.PlatformDefault = False
                   TabOrder = 1
-                  object LayoutLabelValor: TLayout
-                    Align = Top
-                    Size.Width = 119.000000000000000000
+                  object LayoutLBDes: TLayout
+                    Align = Center
+                    Size.Width = 237.000000000000000000
                     Size.Height = 17.000000000000000000
                     Size.PlatformDefault = False
                     TabOrder = 0
-                    object LBValor: TLabel
+                    object LBDescriscao: TLabel
                       Align = Client
                       StyledSettings = [Family, Style]
-                      Size.Width = 119.000000000000000000
+                      Size.Width = 237.000000000000000000
                       Size.Height = 17.000000000000000000
                       Size.PlatformDefault = False
                       TextSettings.Font.Size = 13.000000000000000000
                       TextSettings.FontColor = claWhite
-                      Text = 'Valor (R$)'
+                      Text = 'Descri'#231#227'o'
                       TabOrder = 0
-                    end
-                  end
-                  object LayoutEditValor: TLayout
-                    Align = Client
-                    Size.Width = 119.000000000000000000
-                    Size.Height = 33.000000000000000000
-                    Size.PlatformDefault = False
-                    TabOrder = 1
-                    object edtValor: TEdit
-                      Touch.InteractiveGestures = [LongTap, DoubleTap]
-                      Align = Bottom
-                      StyleLookup = 'transparentedit'
-                      TabOrder = 0
-                      TextSettings.FontColor = claWhite
-                      Position.Y = 1.000000000000000000
-                      Size.Width = 119.000000000000000000
-                      Size.Height = 32.000000000000000000
-                      Size.PlatformDefault = False
-                      StyledSettings = [Family, Size, Style]
                     end
                   end
                 end
               end
-            end
-            object LayoutForma: TLayout
-              Align = Client
-              Size.Width = 287.000000000000000000
-              Size.Height = 62.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 1
-              object LayoutFormaPagamento: TLayout
-                Align = Center
-                Size.Width = 263.000000000000000000
+              object LayoutProfissao: TLayout
+                Align = Top
+                Size.Width = 287.000000000000000000
                 Size.Height = 50.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 0
-                object LayoutLabelForma: TLayout
-                  Align = Top
-                  Size.Width = 263.000000000000000000
-                  Size.Height = 17.000000000000000000
+                TabOrder = 1
+                object LayoutPro: TLayout
+                  Align = Center
+                  Size.Width = 233.000000000000000000
+                  Size.Height = 22.000000000000000000
                   Size.PlatformDefault = False
                   TabOrder = 0
-                  object LBFormaPagamento: TLabel
-                    Align = Client
-                    StyledSettings = [Family, Style]
-                    Size.Width = 263.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TextSettings.Font.Size = 13.000000000000000000
-                    TextSettings.FontColor = claWhite
-                    Text = 'Forma de Pagamento'
-                    TabOrder = 0
-                  end
-                end
-                object LayoutEditForma: TLayout
-                  Align = Client
-                  Size.Width = 263.000000000000000000
-                  Size.Height = 33.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 1
-                  object edtFormaPagamento: TEdit
+                  object edtServico: TEdit
                     Touch.InteractiveGestures = [LongTap, DoubleTap]
                     Align = Bottom
                     StyleLookup = 'transparentedit'
                     TabOrder = 0
                     TextSettings.FontColor = claWhite
-                    Position.Y = 1.000000000000000000
-                    Size.Width = 263.000000000000000000
+                    Position.Y = -10.000000000000000000
+                    Size.Width = 233.000000000000000000
                     Size.Height = 32.000000000000000000
                     Size.PlatformDefault = False
                     StyledSettings = [Family, Size, Style]
                   end
                 end
+                object LayoutLabelProfissao: TLayout
+                  Align = Top
+                  Size.Width = 287.000000000000000000
+                  Size.Height = 20.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 1
+                  object LayoutLBPro: TLayout
+                    Align = Center
+                    Size.Width = 237.000000000000000000
+                    Size.Height = 17.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object LBProfissao: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Style]
+                      Size.Width = 237.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Nome do servi'#231'o'
+                      TabOrder = 0
+                    end
+                  end
+                end
               end
-            end
-          end
-        end
-        object LayoutRegiao: TLayout
-          Align = Top
-          Position.Y = 392.000000000000000000
-          Size.Width = 287.000000000000000000
-          Size.Height = 68.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 1
-          object LayoutLBRegiao: TLayout
-            Align = Center
-            Size.Width = 171.000000000000000000
-            Size.Height = 50.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 0
-            object LBRegiao: TLabel
-              Align = Client
-              StyledSettings = [Style, FontColor]
-              Size.Width = 171.000000000000000000
-              Size.Height = 50.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Family = 'MS Gothic'
-              TextSettings.Font.Size = 26.000000000000000000
-              TextSettings.HorzAlign = Center
-              Text = 'Regi'#227'o'
-              TabOrder = 0
-            end
-          end
-        end
-        object LayoutInfoRegiao: TLayout
-          Align = Top
-          Position.Y = 460.000000000000000000
-          Size.Width = 287.000000000000000000
-          Size.Height = 249.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 4
-          object pnRegiao: TRectangle
-            Align = Client
-            Fill.Color = xFF1E1E1E
-            Size.Width = 287.000000000000000000
-            Size.Height = 249.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            object LayoutCenterRegiao: TLayout
-              Align = Center
-              Size.Width = 266.000000000000000000
-              Size.Height = 225.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 0
-              object LayoutBairro: TLayout
-                Align = Top
-                Position.Y = 100.000000000000000000
-                Size.Width = 266.000000000000000000
+              object LayoutTelefone: TLayout
+                Align = Bottom
+                Position.Y = 139.000000000000000000
+                Size.Width = 287.000000000000000000
                 Size.Height = 50.000000000000000000
                 Size.PlatformDefault = False
                 TabOrder = 2
-                object LayoutEditBairro: TLayout
-                  Align = Client
-                  Size.Width = 266.000000000000000000
-                  Size.Height = 33.000000000000000000
+                object LayoutTel: TLayout
+                  Align = Center
+                  Size.Width = 235.000000000000000000
+                  Size.Height = 25.000000000000000000
                   Size.PlatformDefault = False
                   TabOrder = 0
-                  object edtBairro: TEdit
+                  object edtTelefone: TEdit
                     Touch.InteractiveGestures = [LongTap, DoubleTap]
                     Align = Bottom
                     StyleLookup = 'transparentedit'
                     TabOrder = 0
                     TextSettings.FontColor = claWhite
-                    Position.Y = 1.000000000000000000
-                    Size.Width = 266.000000000000000000
+                    Position.Y = -7.000000000000000000
+                    Size.Width = 235.000000000000000000
                     Size.Height = 32.000000000000000000
                     Size.PlatformDefault = False
                     StyledSettings = [Family, Size, Style]
                   end
                 end
-                object LayoutLabelBairro: TLayout
+                object LayoutLabelTelefone: TLayout
                   Align = Top
-                  Size.Width = 266.000000000000000000
-                  Size.Height = 17.000000000000000000
+                  Size.Width = 287.000000000000000000
+                  Size.Height = 20.000000000000000000
                   Size.PlatformDefault = False
                   TabOrder = 1
-                  object LBBairro: TLabel
-                    Align = Client
-                    StyledSettings = [Family, Style]
-                    Size.Width = 266.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TextSettings.Font.Size = 13.000000000000000000
-                    TextSettings.FontColor = claWhite
-                    Text = 'Bairro'
-                    TabOrder = 0
-                  end
-                end
-              end
-              object LayoutCidade: TLayout
-                Align = Top
-                Position.Y = 50.000000000000000000
-                Size.Width = 266.000000000000000000
-                Size.Height = 50.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 0
-                object LayoutLabelCidade: TLayout
-                  Align = Top
-                  Size.Width = 266.000000000000000000
-                  Size.Height = 17.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 0
-                  object LBCidade: TLabel
-                    Align = Client
-                    StyledSettings = [Family, Style]
-                    Size.Width = 266.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TextSettings.Font.Size = 13.000000000000000000
-                    TextSettings.FontColor = claWhite
-                    Text = 'Cidade'
-                    TabOrder = 0
-                  end
-                end
-                object LayoutEditCidade: TLayout
-                  Align = Client
-                  Size.Width = 266.000000000000000000
-                  Size.Height = 33.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 1
-                  object edtCidade: TEdit
-                    Touch.InteractiveGestures = [LongTap, DoubleTap]
-                    Align = Bottom
-                    StyleLookup = 'transparentedit'
-                    TabOrder = 0
-                    TextSettings.FontColor = claWhite
-                    Position.Y = 1.000000000000000000
-                    Size.Width = 266.000000000000000000
-                    Size.Height = 32.000000000000000000
-                    Size.PlatformDefault = False
-                    StyledSettings = [Family, Size, Style]
-                  end
-                end
-              end
-              object LayoutEstado: TLayout
-                Align = Top
-                Size.Width = 266.000000000000000000
-                Size.Height = 50.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 1
-                object LayoutLabelEstado: TLayout
-                  Align = Top
-                  Size.Width = 266.000000000000000000
-                  Size.Height = 17.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 0
-                  object Layout3D1: TLayout3D
-                    Height = 4.000000000000000000
-                    Width = 5.000000000000000000
-                  end
-                  object Estado: TLabel
-                    Align = Client
-                    StyledSettings = [Family, Style]
-                    Size.Width = 266.000000000000000000
-                    Size.Height = 17.000000000000000000
-                    Size.PlatformDefault = False
-                    TextSettings.Font.Size = 13.000000000000000000
-                    TextSettings.FontColor = claWhite
-                    Text = 'Estado'
-                    TabOrder = 0
-                  end
-                end
-                object LayoutEditEstado: TLayout
-                  Align = Client
-                  Size.Width = 266.000000000000000000
-                  Size.Height = 33.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 1
-                  object edtEstado: TEdit
-                    Touch.InteractiveGestures = [LongTap, DoubleTap]
-                    Align = Bottom
-                    StyleLookup = 'transparentedit'
-                    TabOrder = 0
-                    TextSettings.FontColor = claWhite
-                    Position.Y = 1.000000000000000000
-                    Size.Width = 266.000000000000000000
-                    Size.Height = 32.000000000000000000
-                    Size.PlatformDefault = False
-                    StyledSettings = [Family, Size, Style]
-                  end
-                end
-              end
-              object LayoutCenterEndNumero: TLayout
-                Align = Center
-                Size.Width = 266.000000000000000000
-                Size.Height = 47.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 3
-                object LayoutEnd: TLayout
-                  Align = Client
-                  Size.Width = 128.000000000000000000
-                  Size.Height = 47.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 0
-                  object LayoutLabelNumero: TLayout
-                    Align = Top
-                    Size.Width = 128.000000000000000000
+                  object LayoutLBtelefone: TLayout
+                    Align = Center
+                    Size.Width = 237.000000000000000000
                     Size.Height = 17.000000000000000000
                     Size.PlatformDefault = False
                     TabOrder = 0
-                    object LBEndereço: TLabel
+                    object LBTelefone: TLabel
                       Align = Client
                       StyledSettings = [Family, Style]
+                      Size.Width = 237.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Telefone'
+                      TabOrder = 0
+                    end
+                  end
+                end
+              end
+            end
+          end
+          object LayoutValores: TLayout
+            Align = Top
+            Position.Y = 189.000000000000000000
+            Size.Width = 287.000000000000000000
+            Size.Height = 68.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object LayoutLBValores: TLayout
+              Align = Center
+              Size.Width = 161.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object LBValores: TLabel
+                Align = Client
+                StyledSettings = [Style, FontColor]
+                Size.Width = 161.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.Family = 'MS Gothic'
+                TextSettings.Font.Size = 26.000000000000000000
+                TextSettings.HorzAlign = Center
+                Text = 'Valores'
+                TabOrder = 0
+              end
+            end
+          end
+          object LayoutInfoValores: TLayout
+            Align = Top
+            Position.Y = 257.000000000000000000
+            Size.Width = 287.000000000000000000
+            Size.Height = 135.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            object pnValores: TRectangle
+              Align = Client
+              Fill.Color = xFF1E1E1E
+              Size.Width = 287.000000000000000000
+              Size.Height = 135.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 2.000000000000000000
+              YRadius = 2.000000000000000000
+              object LayoutPreencherValores: TLayout
+                Align = Top
+                Size.Width = 287.000000000000000000
+                Size.Height = 73.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object LayoutValorDesconto: TLayout
+                  Align = Center
+                  Size.Width = 262.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  object LayoutDesconto: TLayout
+                    Align = Right
+                    Position.X = 143.000000000000000000
+                    Size.Width = 119.000000000000000000
+                    Size.Height = 50.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object LayoutEditlDescontos: TLayout
+                      Align = Client
+                      Size.Width = 119.000000000000000000
+                      Size.Height = 33.000000000000000000
+                      Size.PlatformDefault = False
+                      TabOrder = 0
+                      object edtDesconto: TEdit
+                        Touch.InteractiveGestures = [LongTap, DoubleTap]
+                        Align = Bottom
+                        StyleLookup = 'transparentedit'
+                        TabOrder = 0
+                        TextSettings.FontColor = claWhite
+                        Position.Y = 1.000000000000000000
+                        Size.Width = 119.000000000000000000
+                        Size.Height = 32.000000000000000000
+                        Size.PlatformDefault = False
+                        StyledSettings = [Family, Size, Style]
+                      end
+                    end
+                    object LayoutLabelDescontos: TLayout
+                      Align = Top
+                      Size.Width = 119.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TabOrder = 1
+                      object LBDescontos: TLabel
+                        Align = Client
+                        StyledSettings = [Family, Style]
+                        Size.Width = 119.000000000000000000
+                        Size.Height = 17.000000000000000000
+                        Size.PlatformDefault = False
+                        TextSettings.Font.Size = 13.000000000000000000
+                        TextSettings.FontColor = claWhite
+                        Text = 'Descontos'
+                        TabOrder = 0
+                      end
+                    end
+                  end
+                  object LayoutValor: TLayout
+                    Align = Left
+                    Size.Width = 119.000000000000000000
+                    Size.Height = 50.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 1
+                    object LayoutLabelValor: TLayout
+                      Align = Top
+                      Size.Width = 119.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TabOrder = 0
+                      object LBValor: TLabel
+                        Align = Client
+                        StyledSettings = [Family, Style]
+                        Size.Width = 119.000000000000000000
+                        Size.Height = 17.000000000000000000
+                        Size.PlatformDefault = False
+                        TextSettings.Font.Size = 13.000000000000000000
+                        TextSettings.FontColor = claWhite
+                        Text = 'Valor (R$)'
+                        TabOrder = 0
+                      end
+                    end
+                    object LayoutEditValor: TLayout
+                      Align = Client
+                      Size.Width = 119.000000000000000000
+                      Size.Height = 33.000000000000000000
+                      Size.PlatformDefault = False
+                      TabOrder = 1
+                      object edtValor: TEdit
+                        Touch.InteractiveGestures = [LongTap, DoubleTap]
+                        Align = Bottom
+                        StyleLookup = 'transparentedit'
+                        TabOrder = 0
+                        TextSettings.FontColor = claWhite
+                        Position.Y = 1.000000000000000000
+                        Size.Width = 119.000000000000000000
+                        Size.Height = 32.000000000000000000
+                        Size.PlatformDefault = False
+                        StyledSettings = [Family, Size, Style]
+                      end
+                    end
+                  end
+                end
+              end
+              object LayoutForma: TLayout
+                Align = Client
+                Size.Width = 287.000000000000000000
+                Size.Height = 62.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 1
+                object LayoutFormaPagamento: TLayout
+                  Align = Center
+                  Size.Width = 263.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  object LayoutLabelForma: TLayout
+                    Align = Top
+                    Size.Width = 263.000000000000000000
+                    Size.Height = 17.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object LBFormaPagamento: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Style]
+                      Size.Width = 263.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Forma de Pagamento'
+                      TabOrder = 0
+                    end
+                  end
+                  object LayoutEditForma: TLayout
+                    Align = Client
+                    Size.Width = 263.000000000000000000
+                    Size.Height = 33.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 1
+                    object edtFormaPagamento: TEdit
+                      Touch.InteractiveGestures = [LongTap, DoubleTap]
+                      Align = Bottom
+                      StyleLookup = 'transparentedit'
+                      TabOrder = 0
+                      TextSettings.FontColor = claWhite
+                      Position.Y = 1.000000000000000000
+                      Size.Width = 263.000000000000000000
+                      Size.Height = 32.000000000000000000
+                      Size.PlatformDefault = False
+                      StyledSettings = [Family, Size, Style]
+                    end
+                  end
+                end
+              end
+            end
+          end
+          object LayoutRegiao: TLayout
+            Align = Top
+            Position.Y = 392.000000000000000000
+            Size.Width = 287.000000000000000000
+            Size.Height = 68.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object LayoutLBRegiao: TLayout
+              Align = Center
+              Size.Width = 171.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object LBRegiao: TLabel
+                Align = Client
+                StyledSettings = [Style, FontColor]
+                Size.Width = 171.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.Family = 'MS Gothic'
+                TextSettings.Font.Size = 26.000000000000000000
+                TextSettings.HorzAlign = Center
+                Text = 'Regi'#227'o'
+                TabOrder = 0
+              end
+            end
+          end
+          object LayoutInfoRegiao: TLayout
+            Align = Top
+            Position.Y = 460.000000000000000000
+            Size.Width = 287.000000000000000000
+            Size.Height = 249.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            object pnRegiao: TRectangle
+              Align = Client
+              Fill.Color = xFF1E1E1E
+              Size.Width = 287.000000000000000000
+              Size.Height = 249.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              object LayoutCenterRegiao: TLayout
+                Align = Center
+                Size.Width = 266.000000000000000000
+                Size.Height = 225.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object LayoutBairro: TLayout
+                  Align = Top
+                  Position.Y = 100.000000000000000000
+                  Size.Width = 266.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 2
+                  object LayoutEditBairro: TLayout
+                    Align = Client
+                    Size.Width = 266.000000000000000000
+                    Size.Height = 33.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object edtBairro: TEdit
+                      Touch.InteractiveGestures = [LongTap, DoubleTap]
+                      Align = Bottom
+                      StyleLookup = 'transparentedit'
+                      TabOrder = 0
+                      TextSettings.FontColor = claWhite
+                      Position.Y = 1.000000000000000000
+                      Size.Width = 266.000000000000000000
+                      Size.Height = 32.000000000000000000
+                      Size.PlatformDefault = False
+                      StyledSettings = [Family, Size, Style]
+                    end
+                  end
+                  object LayoutLabelBairro: TLayout
+                    Align = Top
+                    Size.Width = 266.000000000000000000
+                    Size.Height = 17.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 1
+                    object LBBairro: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Style]
+                      Size.Width = 266.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Bairro'
+                      TabOrder = 0
+                    end
+                  end
+                end
+                object LayoutCidade: TLayout
+                  Align = Top
+                  Position.Y = 50.000000000000000000
+                  Size.Width = 266.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  object LayoutLabelCidade: TLayout
+                    Align = Top
+                    Size.Width = 266.000000000000000000
+                    Size.Height = 17.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object LBCidade: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Style]
+                      Size.Width = 266.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Cidade'
+                      TabOrder = 0
+                    end
+                  end
+                  object LayoutEditCidade: TLayout
+                    Align = Client
+                    Size.Width = 266.000000000000000000
+                    Size.Height = 33.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 1
+                    object edtCidade: TEdit
+                      Touch.InteractiveGestures = [LongTap, DoubleTap]
+                      Align = Bottom
+                      StyleLookup = 'transparentedit'
+                      TabOrder = 0
+                      TextSettings.FontColor = claWhite
+                      Position.Y = 1.000000000000000000
+                      Size.Width = 266.000000000000000000
+                      Size.Height = 32.000000000000000000
+                      Size.PlatformDefault = False
+                      StyledSettings = [Family, Size, Style]
+                    end
+                  end
+                end
+                object LayoutEstado: TLayout
+                  Align = Top
+                  Size.Width = 266.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 1
+                  object LayoutLabelEstado: TLayout
+                    Align = Top
+                    Size.Width = 266.000000000000000000
+                    Size.Height = 17.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object Layout3D1: TLayout3D
+                      Height = 4.000000000000000000
+                      Width = 5.000000000000000000
+                    end
+                    object Estado: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Style]
+                      Size.Width = 266.000000000000000000
+                      Size.Height = 17.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.Size = 13.000000000000000000
+                      TextSettings.FontColor = claWhite
+                      Text = 'Estado'
+                      TabOrder = 0
+                    end
+                  end
+                  object LayoutEditEstado: TLayout
+                    Align = Client
+                    Size.Width = 266.000000000000000000
+                    Size.Height = 33.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 1
+                    object edtEstado: TEdit
+                      Touch.InteractiveGestures = [LongTap, DoubleTap]
+                      Align = Bottom
+                      StyleLookup = 'transparentedit'
+                      TabOrder = 0
+                      TextSettings.FontColor = claWhite
+                      Position.Y = 1.000000000000000000
+                      Size.Width = 266.000000000000000000
+                      Size.Height = 32.000000000000000000
+                      Size.PlatformDefault = False
+                      StyledSettings = [Family, Size, Style]
+                    end
+                  end
+                end
+                object LayoutCenterEndNumero: TLayout
+                  Align = Center
+                  Size.Width = 266.000000000000000000
+                  Size.Height = 47.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 3
+                  object LayoutEnd: TLayout
+                    Align = Client
+                    Size.Width = 128.000000000000000000
+                    Size.Height = 47.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object LayoutLabelNumero: TLayout
+                      Align = Top
                       Size.Width = 128.000000000000000000
                       Size.Height = 17.000000000000000000
                       Size.PlatformDefault = False
-                      TextSettings.Font.Size = 13.000000000000000000
-                      TextSettings.FontColor = claWhite
-                      Text = 'Endere'#231'o'
                       TabOrder = 0
+                      object LBEndereço: TLabel
+                        Align = Client
+                        StyledSettings = [Family, Style]
+                        Size.Width = 128.000000000000000000
+                        Size.Height = 17.000000000000000000
+                        Size.PlatformDefault = False
+                        TextSettings.Font.Size = 13.000000000000000000
+                        TextSettings.FontColor = claWhite
+                        Text = 'Endere'#231'o'
+                        TabOrder = 0
+                      end
+                    end
+                    object edtEnd: TEdit
+                      Touch.InteractiveGestures = [LongTap, DoubleTap]
+                      Align = Bottom
+                      TabOrder = 1
+                      Position.Y = 15.000000000000000000
+                      Size.Width = 128.000000000000000000
+                      Size.Height = 32.000000000000000000
+                      Size.PlatformDefault = False
                     end
                   end
-                  object edtEnd: TEdit
-                    Touch.InteractiveGestures = [LongTap, DoubleTap]
-                    Align = Bottom
-                    TabOrder = 1
-                    Position.Y = 15.000000000000000000
-                    Size.Width = 128.000000000000000000
-                    Size.Height = 32.000000000000000000
-                    Size.PlatformDefault = False
-                  end
-                end
-                object LayoutNumero: TLayout
-                  Align = Right
-                  Position.X = 128.000000000000000000
-                  Size.Width = 138.000000000000000000
-                  Size.Height = 47.000000000000000000
-                  Size.PlatformDefault = False
-                  TabOrder = 1
-                  object LayoutLabelEnd: TLayout
-                    Align = Top
+                  object LayoutNumero: TLayout
+                    Align = Right
+                    Position.X = 128.000000000000000000
                     Size.Width = 138.000000000000000000
-                    Size.Height = 17.000000000000000000
+                    Size.Height = 47.000000000000000000
                     Size.PlatformDefault = False
-                    TabOrder = 0
-                    object LBNumero: TLabel
-                      Align = Client
-                      StyledSettings = [Family, Style]
+                    TabOrder = 1
+                    object LayoutLabelEnd: TLayout
+                      Align = Top
                       Size.Width = 138.000000000000000000
                       Size.Height = 17.000000000000000000
                       Size.PlatformDefault = False
-                      TextSettings.Font.Size = 13.000000000000000000
-                      TextSettings.FontColor = claWhite
-                      Text = 'Numero'
                       TabOrder = 0
+                      object LBNumero: TLabel
+                        Align = Client
+                        StyledSettings = [Family, Style]
+                        Size.Width = 138.000000000000000000
+                        Size.Height = 17.000000000000000000
+                        Size.PlatformDefault = False
+                        TextSettings.Font.Size = 13.000000000000000000
+                        TextSettings.FontColor = claWhite
+                        Text = 'Numero'
+                        TabOrder = 0
+                      end
                     end
-                  end
-                  object edtNumero: TEdit
-                    Touch.InteractiveGestures = [LongTap, DoubleTap]
-                    Align = Bottom
-                    TabOrder = 1
-                    Position.Y = 15.000000000000000000
-                    Size.Width = 138.000000000000000000
-                    Size.Height = 32.000000000000000000
-                    Size.PlatformDefault = False
+                    object edtNumero: TEdit
+                      Touch.InteractiveGestures = [LongTap, DoubleTap]
+                      Align = Bottom
+                      TabOrder = 1
+                      Position.Y = 15.000000000000000000
+                      Size.Width = 138.000000000000000000
+                      Size.Height = 32.000000000000000000
+                      Size.PlatformDefault = False
+                    end
                   end
                 end
               end
             end
           end
         end
-      end
-      object LayoutBottomSalvar: TLayout
-        Align = Bottom
-        Position.Y = 888.000000000000000000
-        Size.Width = 299.000000000000000000
-        Size.Height = 85.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        object LayoutSalvar: TLayout
-          Align = Center
-          Size.Width = 266.000000000000000000
-          Size.Height = 32.000000000000000000
+        object LayoutBottomSalvar: TLayout
+          Align = Bottom
+          Position.Y = 888.000000000000000000
+          Size.Width = 299.000000000000000000
+          Size.Height = 85.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 0
-          object btnSalvar: TButton
-            Align = Client
+          TabOrder = 1
+          object LayoutSalvar: TLayout
+            Align = Center
             Size.Width = 266.000000000000000000
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            Text = 'Salvar'
-            TextSettings.Font.Size = 18.000000000000000000
+            object btnSalvar: TButton
+              Align = Client
+              Size.Width = 266.000000000000000000
+              Size.Height = 32.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Text = 'Salvar'
+              TextSettings.Font.Size = 18.000000000000000000
+              OnClick = btnSalvarClick
+            end
           end
         end
       end
@@ -696,6 +707,7 @@
     Connection = Banco.Connection
     SQL.Strings = (
       'select * from servicos')
+    Active = True
     Left = 136
     Top = 472
   end

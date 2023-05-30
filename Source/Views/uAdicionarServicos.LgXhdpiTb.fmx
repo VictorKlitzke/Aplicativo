@@ -2,29 +2,35 @@ inherited AdicionarServicos_LgXhdpiTb: TAdicionarServicos_LgXhdpiTb
   ClientHeight = 854
   ClientWidth = 480
   DesignerMasterStyle = 3
-  inherited LayoutContent: TLayout
+  inherited ScrollAdicionarServicos: TVertScrollBox
     Size.Width = 480.000000000000000000
     Size.Height = 854.000000000000000000
-    inherited pnContent: TRectangle
+    Viewport.Width = 480.000000000000000000
+    Viewport.Height = 854.000000000000000000
+    inherited LayoutContent: TLayout
       Size.Width = 480.000000000000000000
       Size.Height = 854.000000000000000000
-      inherited LayoutCenter: TLayout
-        inherited LayoutInfoServicos: TLayout
-          inherited pnInfoServicos: TRectangle
-            inherited LayoutDescriscao: TLayout
-              inherited LayoutDes: TLayout
-                inherited edtDescriscao: TMemo
-                  Viewport.Width = 233.000000000000000000
-                  Viewport.Height = 50.000000000000000000
+      inherited pnContent: TRectangle
+        Size.Width = 480.000000000000000000
+        Size.Height = 854.000000000000000000
+        inherited LayoutCenter: TLayout
+          inherited LayoutInfoServicos: TLayout
+            inherited pnInfoServicos: TRectangle
+              inherited LayoutDescriscao: TLayout
+                inherited LayoutDes: TLayout
+                  inherited edtDescriscao: TMemo
+                    Viewport.Width = 233.000000000000000000
+                    Viewport.Height = 50.000000000000000000
+                  end
                 end
               end
             end
           end
         end
-      end
-      inherited LayoutBottomSalvar: TLayout
-        Position.Y = 769.000000000000000000
-        Size.Width = 480.000000000000000000
+        inherited LayoutBottomSalvar: TLayout
+          Position.Y = 769.000000000000000000
+          Size.Width = 480.000000000000000000
+        end
       end
     end
   end

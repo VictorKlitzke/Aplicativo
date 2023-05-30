@@ -98,11 +98,11 @@ begin
 
     CamposObrigadorios;
 
-    if not ValidarEmail(edtEmail.Text) then
-    begin
-      ShowMessage('Endereço de e-mail inválido!');
-      Exit;
-    end;
+//    if not ValidarEmail(edtEmail.Text) then
+//    begin
+//      ShowMessage('Endereço de e-mail inválido!');
+//      Exit;
+//    end;
 
 //    if not ValidarTelefone(edtTelefone.Text) then
 //    begin
@@ -125,7 +125,6 @@ begin
     begin
       ShowMessage('Erro ao cadastrar usuário: ' + E.Message);
     end;
-
   end;
   qrUsuarioAdicionar.Insert;
 end;

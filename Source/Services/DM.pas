@@ -61,6 +61,20 @@ var
   Telefone,
   Senha: string;
 
+  id_servicos,
+  id_usuarios: Integer;
+
+  Servicos,
+  Descriscao,
+  Estado,
+  Forma_pagamento,
+  Endereco,
+  Bairro,
+  Cidade,
+  Numero,
+  Desconto,
+  Valor: string;
+
 implementation
 
 {%CLASSGROUP 'FMX.Controls.TControl'}

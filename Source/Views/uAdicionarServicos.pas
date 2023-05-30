@@ -31,6 +31,7 @@ uses
 type
   TAdicionarServicos = class(TForm)
     qrAdicionarServicos: TUniQuery;
+    ScrollAdicionarServicos: TVertScrollBox;
     LayoutContent: TLayout;
     pnContent: TRectangle;
     LayoutCenter: TLayout;
@@ -44,7 +45,7 @@ type
     LBDescriscao: TLabel;
     LayoutProfissao: TLayout;
     LayoutPro: TLayout;
-    edtProfissao: TEdit;
+    edtServico: TEdit;
     LayoutLabelProfissao: TLayout;
     LayoutLBPro: TLayout;
     LBProfissao: TLabel;
@@ -112,6 +113,8 @@ type
     LayoutSalvar: TLayout;
     btnSalvar: TButton;
     procedure FormShow(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     procedure SalvarDados;
   public
@@ -130,6 +133,16 @@ uses
 {$R *.LgXhdpiTb.fmx ANDROID}
 {$R *.LgXhdpiPh.fmx ANDROID}
 
+procedure TAdicionarServicos.btnSalvarClick(Sender: TObject);
+begin
+  SalvarDados;
+end;
+
+procedure TAdicionarServicos.FormCreate(Sender: TObject);
+begin
+  edtTelefone.Text := DM.Banco.qrUsuariosPSQTELEFONE.AsString;
+end;
+
 procedure TAdicionarServicos.FormShow(Sender: TObject);
 begin
   DM.Banco.Connection.Connected := True;
@@ -140,22 +153,34 @@ begin
   DM.Banco.Connection.StartTransaction;
   try
     qrAdicionarServicos.Insert;
-    qrAdicionarServicos.FieldByName('servico').AsString;
-    qrAdicionarServicos.FieldByName('descricao').AsString;
-    qrAdicionarServicos.FieldByName('valor').AsString;
-    qrAdicionarServicos.FieldByName('desconto').AsString;
-    qrAdicionarServicos.FieldByName('forma_pagamento').AsString;
-    qrAdicionarServicos.FieldByName('estado').AsString;
-    qrAdicionarServicos.FieldByName('cidade').AsString;
-    qrAdicionarServicos.FieldByName('endereco').AsString;
-    qrAdicionarServicos.FieldByName('bairro').AsString;
+    qrAdicionarServicos.FieldByName('servico').AsString := edtServico.Text;
+    qrAdicionarServicos.FieldByName('descricao').AsString := edtDescriscao.Text;
+    qrAdicionarServicos.FieldByName('valor').AsString := edtValor.Text;
+    qrAdicionarServicos.FieldByName('desconto').AsString := edtDesconto.Text;
+    qrAdicionarServicos.FieldByName('forma_pagamento').AsString := edtFormaPagamento.Text;
+    qrAdicionarServicos.FieldByName('estado').AsString := edtEstado.Text;
+    qrAdicionarServicos.FieldByName('cidade').AsString := edtCidade.Text;
+    qrAdicionarServicos.FieldByName('endereco').AsString := edtEnd.Text;
+    qrAdicionarServicos.FieldByName('bairro').AsString := edtBairro.Text;
     qrAdicionarServicos.Post;
+
+    qrAdicionarServicos.Connection.Commit;
+
+    DM.Servicos := qrAdicionarServicos.FieldByName('servico').AsString;
+    DM.Descriscao := qrAdicionarServicos.FieldByName('descricao').AsString;
+    DM.Valor := qrAdicionarServicos.FieldByName('valor').AsString;
+    DM.Desconto := qrAdicionarServicos.FieldByName('desconto').AsString;
+    DM.Forma_pagamento := qrAdicionarServicos.FieldByName('forma_pagamento').AsString;
+    DM.Estado := qrAdicionarServicos.FieldByName('estado').AsString;
+    DM.Cidade := qrAdicionarServicos.FieldByName('cidade').AsString;
+    DM.Endereco := qrAdicionarServicos.FieldByName('endereco').AsString;
+    DM.Bairro := qrAdicionarServicos.FieldByName('bairro').AsString;
   except
     on e: Exception do
     begin
       ShowMessage('Erro ao adicionar serviço' + e.Message);
     end;
   end;
+  qrAdicionarServicos.Insert;
 end;
-
 end.
