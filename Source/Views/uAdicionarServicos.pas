@@ -152,6 +152,7 @@ procedure TAdicionarServicos.SalvarDados;
 begin
   DM.Banco.Connection.StartTransaction;
   try
+    DM.Id := qrAdicionarServicos.FieldByName('id_usuario').AsInteger;
     qrAdicionarServicos.Insert;
     qrAdicionarServicos.FieldByName('servico').AsString := edtServico.Text;
     qrAdicionarServicos.FieldByName('descricao').AsString := edtDescriscao.Text;

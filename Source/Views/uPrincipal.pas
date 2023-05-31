@@ -249,9 +249,9 @@ end;
 procedure TPrincipal.FormShow(Sender: TObject);
 begin
   DM.Banco.Connection.Connected := True;
-  if DM.Banco.qrUsuariosPSQSTATUS.AsInteger = 1 then
+  if DM.Status = 1 then
   begin
-    LBSobre.Enabled := False;
+    LBSobre.Enabled := True;
   end;
 end;
 

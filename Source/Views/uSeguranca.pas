@@ -93,12 +93,14 @@ begin
       begin
         qrUsuariosDeletarSTATUS.Value := 1;
       end;
+
+    qrUsuariosDeletar.FieldByName('Status').AsInteger := DM.Status;
     Salva(qrUsuariosDeletar);
   except
   on e: Exception do
     begin
       DM.Banco.Connection.Rollback;
-      ShowMessage('Erro ao excluir usuário: ' + E.Message);
+      ShowMessage('Erro ao desativar usuário: ' + E.Message);
     end;
 end;
 end;

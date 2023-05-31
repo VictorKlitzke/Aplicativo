@@ -7,7 +7,7 @@ object Banco: TBanco
     Port = 3306
     Database = 'vgmobile'
     Username = 'VGServices'
-    Server = '10.1.1.103'
+    Server = '192.168.0.103'
     Connected = True
     LoginPrompt = False
     Left = 24
